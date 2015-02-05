@@ -1,0 +1,441 @@
+# ========================================
+# File				:		CMakeDependenciesConfig.txt
+# Description		:		Required libraries for Rigs of Rods are configured here.
+#
+# RoR build version	:		0.4.0.7
+# Build targets		:		osx_10.9, win32
+# ========================================
+
+
+# Set RoR build defaults
+# ----------------------
+SET(ROR_USE_ANGELSCRIPT  "FALSE" CACHE BOOL "AngelScript: scripting module")
+SET(ROR_USE_CAELUM       "FALSE" CACHE BOOL "Caelum: dynamic sky engine, alternative to skybox")
+SET(ROR_USE_CURL         "TRUE" CACHE BOOL "cURL: required for communication with online services")
+SET(ROR_USE_OPENAL       "TRUE" CACHE BOOL "OpenAL : audio support")
+SET(ROR_USE_PAGED        "TRUE" CACHE BOOL "PagedGeometry: LOD and outdoor optimizations")
+SET(ROR_USE_SOCKETW      "TRUE" CACHE BOOL "SocketW: network support")
+# TODO: Where's Hydrax? 
+
+
+# Obsolete options, disabled for now.
+# -----------------------------------
+SET(ROR_BUILD_SIM       ON)
+SET(ROR_BUILD_UPDATER   OFF)
+SET(ROR_FEAT_TIMING     OFF) 
+# SET(ROR_FEAT_TIMING     "FALSE" CACHE BOOL "enable beam statistics, for core development only")
+
+#SET_PROPERTY(TARGET 'Ogre' PROPERTY IMPORTED_LOCATION ${rorbuild_root}/lib/${build_target}/OgreStatic/${build_configuration}/${libName}.a)
+
+# Define 'importLib' function
+# ---------------------------
+MACRO(importLib libName dirName)
+# Import a static library.
+	MESSAGE(STATUS "${build_target}: Adding library ${libName}: ${rorbuild_root}/lib/${build_target}/${dirName}/${build_configuration}/${libName}.a")
+	ADD_LIBRARY(${libName} STATIC IMPORTED)	
+# Build Release mode by default.
+	SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+# then the special config
+	IF(EXISTS ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_RELEASE        ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+	ENDIF()
+	IF(EXISTS ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/RelWithDebInfo/${libName}.a)
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_RELWITHDEBINFO ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/RelWithDebInfo/${libName}.a)
+	ELSE()
+# fallback to release
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_RELWITHDEBINFO ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+	ENDIF()
+	IF(EXISTS ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Debug/${libName}_d.a)
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_DEBUG          ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Debug/${libName}_d.a)
+	ELSE()
+# fallback to release
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_RELWITHDEBINFO ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+	ENDIF()
+	IF(EXISTS ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Debug/${libName}.a)
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_DEBUG          ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Debug/${libName}.a)
+	ELSE()
+# fallback to release
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_RELWITHDEBINFO ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+	ENDIF()
+	IF(EXISTS ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/MinSizeRel/${libName}.a)
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_MINSIZEREL     ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/MinSizeRel/${libName}.a)
+	ELSE()
+# fallback to release
+		SET_PROPERTY(TARGET ${libName} PROPERTY  IMPORTED_LOCATION_RELWITHDEBINFO ${rorbuild_root}/lib/${TARGET_DIR}/${dirName}/Release/${libName}.a)
+	ENDIF()
+ENDMACRO(importLib)
+
+
+# Build scripts start here
+# ------------------------
+
+
+# ============================================================================
+#  Windows
+# ============================================================================
+
+IF(WIN32)		
+	SET(ROR_USE_OIS_G27      "FALSE" CACHE BOOL "use OIS with G27 patches")
+	SET(ROR_USE_MOFILEREADER "TRUE" CACHE BOOL "use mofilereader")
+	
+	SET(ROR_USE_CRASHRPT "FALSE" CACHE BOOL "use crash report tool")
+	# check if dependencies dir is in here
+	SET(rorbuild_dir_check "${ror_source_dir}/dependencies")
+	SET(DEPENDENCIES_DIR "")
+	IF(IS_DIRECTORY ${rorbuild_dir_check})
+		SET(DEPENDENCIES_DIR ${rorbuild_dir_check})
+	ENDIF(IS_DIRECTORY ${rorbuild_dir_check})
+
+	SET(rorbuild_root "${DEPENDENCIES_DIR}" CACHE PATH "RoR dependencies directory root path.")
+
+	IF(NOT rorbuild_root)
+		MESSAGE(FATAL_ERROR "    Error: RoR dependencies directory path not set correctly. Check rorbuild_root.")
+	ENDIF(NOT rorbuild_root)
+
+	#### REQUIRED COMPONENTS
+	SET(ogre_include_dirs 
+		"${rorbuild_root}/includes/${ARCH_DIR}/Ogre/;"
+		"${rorbuild_root}/includes/${ARCH_DIR}/Ogre/Terrain;"
+		"${rorbuild_root}/includes/${ARCH_DIR}/Ogre/Paging;"
+		"${rorbuild_root}/includes/${ARCH_DIR}/Ogre/RTShaderSystem;"
+		"${rorbuild_root}/includes/${ARCH_DIR}/Ogre/Property;"
+		"The ogre include path to use")
+	importLib(OgreMain Ogre)
+	importLib(OgreTerrain Ogre)
+	importLib(OgrePaging Ogre)
+	importLib(OgreRTShaderSystem Ogre)
+	importLib(OgreProperty Ogre)
+	SET(Ogre_LIBRARIES "OgreMain;OgreTerrain;OgrePaging;OgreRTShaderSystem;OgreProperty" CACHE STRING "The Ogre libs to link against")
+
+	SET(Ois_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/ois" CACHE PATH "The OIS include path to use")
+	importLib(ois_static OIS)
+	SET(Ois_LIBRARIES "ois_static" CACHE STRING "The OIS libs to link against")
+
+	SET(Boost_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/boost" CACHE PATH "The boost include path to use")
+	SET(Boost_LIBRARY_DIRS "${rorbuild_root}/libs/${ARCH_DIR}/boost" CACHE PATH "The boost lib path to use")
+	SET(Boost_LIBRARIES "optimized;libboost_date_time-vc100-mt-1_48;libboost_filesystem-vc100-mt-1_48" CACHE STRING "The boost libs to link against")
+
+	# special include path for curl ...
+	IF(ROR_USE_CURL)
+		SET(CURL_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/curl" CACHE PATH "The curl include path to use")
+		SET(CURL_LIBRARIES "libcurl_imp" CACHE STRING "The curl lib to link against")
+		importLib(libcurl_imp curl)
+	ENDIF(ROR_USE_CURL)
+	
+	SET(PThread_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/pthread" CACHE PATH "The pthread include path to use")
+	SET(PThread_LIBRARIES "optimized;${rorbuild_root}/libs/${ARCH_DIR}/pthread/Release/pthreadVC2.lib" CACHE STRING "The pthread lib to link against")
+	INCLUDE_DIRECTORIES(${PThread_INCLUDE_DIRS})
+
+	# directX
+	SET(DirectX_INCLUDE_DIRS "$ENV{DXSDK_DIR}/Include" CACHE PATH "The DirectX include path to use")
+	SET(DirectX_LIBRARY_DIRS "$ENV{DXSDK_DIR}/lib/${ARCH_DIR}/" CACHE PATH "The DirectX lib path to use")
+	INCLUDE_DIRECTORIES(${DirectX_INCLUDE_DIRS})
+	LINK_DIRECTORIES  (${DirectX_LIBRARY_DIRS})
+
+
+	#### OPTIONAL COMPONENTS
+	IF(ROR_USE_MYGUI)
+		SET(MYGUI_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/MyGUI" CACHE PATH "The mygui include path to use")
+		importLib(MyGUIEngineStatic MyGUI)
+		importLib(MyGUI.OgrePlatform MyGUI)
+		importLib(freetype2311 MyGUI)
+		SET(MYGUI_LIBRARIES "MyGUI.OgrePlatform;MyGUIEngineStatic;freetype2311" CACHE STRING "The mygui libs to link against")
+	ENDIF(ROR_USE_MYGUI)
+
+	IF(ROR_USE_OPENAL)
+		SET(OPENAL_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/OpenALSoft" CACHE PATH "The openal include path to use")
+		importLib(OpenAL32 OpenALSoft)
+		SET(OPENAL_LIBRARIES "OpenAL32" CACHE STRING "The openal libs to link against")
+	ENDIF(ROR_USE_OPENAL)
+
+	IF(ROR_USE_SOCKETW)
+		SET(SOCKETW_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/SocketW" CACHE PATH "The socketw include path to use")
+		importLib(mysocketw SocketW)
+		SET(SOCKETW_LIBRARIES    "mysocketw;Ws2_32.lib" CACHE STRING "The socketw lib to link against")
+	ENDIF(ROR_USE_SOCKETW)
+
+	IF(ROR_USE_MOFILEREADER)
+		SET(MOFILEREADER_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/mofilereader" CACHE PATH "The mofilereader include path to use")
+		importLib(moFileReader.static MoFileReader)
+		SET(MOFILEREADER_LIBRARIES    "moFileReader.static" CACHE STRING "The mofilereader lib to link against")
+	ENDIF(ROR_USE_MOFILEREADER)
+
+	IF(ROR_USE_PAGED)
+		SET(PAGED_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/PagedGeometry" CACHE PATH "The paged include path to use")
+		importLib(PagedGeometry PagedGeometry)
+		SET(PAGED_LIBRARIES    "PagedGeometry" CACHE STRING "The paged lib to link against")
+	ENDIF(ROR_USE_PAGED)
+
+	IF(ROR_USE_CAELUM)
+		SET(CAELUM_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/Caelum" CACHE PATH "The caelum include path to use")
+		importLib(Caelum Caelum)
+		SET(CAELUM_LIBRARIES    "Caelum" CACHE STRING "The caelum lib to link against")
+	ENDIF(ROR_USE_CAELUM)
+
+	IF(ROR_USE_CRASHRPT)
+		SET(CRASHRPT_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/CrashRpt" CACHE PATH "The CrashRpt include path to use")
+		SET(CRASHRPT_LIBRARY_DIRS "${rorbuild_root}/libs/${ARCH_DIR}/CrashRpt" CACHE PATH "The CrashRpt lib path to use")
+		SET(CRASHRPT_LIBRARIES    "CrashRpt1300.lib" CACHE STRING "The CrashRpt lib to link against")
+	ENDIF(ROR_USE_CRASHRPT)
+
+	IF(ROR_USE_ANGELSCRIPT)
+		SET(ANGELSCRIPT_INCLUDE_DIRS "${rorbuild_root}/includes/${ARCH_DIR}/AngelScript;${ror_source_dir}/source/angelscript_addons" CACHE PATH "The AngelScript include path to use")
+		importLib(angelscript angelscript)
+		SET(ANGELSCRIPT_LIBRARIES    "angelscript" CACHE STRING "The AngelScript libs to link against")
+	ENDIF(ROR_USE_ANGELSCRIPT)
+
+
+# =============================================================================
+# OS X 10.9
+# =============================================================================
+
+ELSEIF(APPLE)
+	MESSAGE("")
+	MESSAGE("CMake is configuring this RoR build for OS X.")
+	MESSAGE("rorbuild_root: ${rorbuild_root}")
+	SET(BUILD_TARGET "osx_10.9")  # overrides BUILD_TARGET set in CMakeLists.txt
+	SET(build_configuration "RelWithDebInfo")
+	
+# OS X configuration options
+# --------------------------
+	MESSAGE("Configuring RoR dependencies")
+	MESSAGE("----------------------------")
+	
+# Define additional libraries
+# ---------------------------
+	SET(ROR_USE_MYGUI        	"FALSE" CACHE BOOL "MyGUI : GUI for configurator and in-game menus")
+	SET(ROR_USE_MOFILEREADER 	"TRUE"  CACHE BOOL "MoFileReader: Reads .mo localization files")
+	SET(ROR_USE_CRASHRPT 		"FALSE" CACHE BOOL "CrashRpt: generates crash reports")
+	SET(ROR_USE_OIS_G27      	"FALSE" CACHE BOOL "OIS compatibility patch for Logitech G27")
+	SET(ROR_USE_OIS				"FALSE" CACHE BOOL "OIS: input system")
+
+# Import RoR required components
+# ------------------------------
+	MESSAGE("")
+	MESSAGE("RoR required components")
+	MESSAGE("-----------------------")
+
+# OIS
+	SET(Ois_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/OIS" CACHE PATH "OIS: header path")
+	importLib(libOIS OIS)
+	SET(Ois_LIBRARIES "ois_static" CACHE STRING "OIS: static library")
+
+# Boost
+	SET(Boost_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/Boost" CACHE PATH "Boost: header path")
+	SET(Boost_LIBRARY_DIRS "${rorbuild_root}/lib/${TARGET_DIR}/boost" CACHE PATH "Boost: library path")
+	SET(Boost_LIBRARIES "optimized;libboost_date_time-vc100-mt-1_48;libboost_filesystem-vc100-mt-1_48" CACHE STRING "The boost libs to link against")
+	
+# Ogre
+	MESSAGE("")
+	MESSAGE("    Ogre")
+	MESSAGE("    ----")
+	
+	SET(OGRE_INCLUDE_DIRS "${rorbuild_root}/include/${build_target}/Ogre" CACHE STRING "Ogre: headers directory")
+	SET(OGRE_LIBRARY_DIRS "${rorbuild_root}/lib/${build_target}/Ogre/${build_configuration}")
+	SET(OGRE_LIBRARIES "OgreMain;OgreTerrain;OgrePaging;OgreRTShaderSystem;OgreProperty" CACHE STRING "Ogre libraries to link against.")
+	MESSAGE("OGRE_INCLUDE_DIRS: ${OGRE_INCLUDE_DIRS}")
+	MESSAGE("OGRE_LIBRARY_DIRS: ${OGRE_LIBRARY_DIRS}")
+	#importLib(libOgreMainStatic OgreStatic)
+	#importLib(libOgrePagingStatic OgreStatic)
+	#importLib(libOgrePropertyStatic OgreStatic)
+	#importLib(libOgreRTShaderSystemStatic OgreStatic)
+	#importLib(libOgreTerrainStatic OgreStatic)
+	#importLib(libRenderSystem_GLStatic OgreStatic)
+	#importLib(libOgreMainStatic OGRE)
+	
+	#### REQUIRED COMPONENTS
+	importLib(OgreMain Ogre)
+	importLib(OgreTerrain Ogre)
+	importLib(OgrePaging Ogre)
+	importLib(OgreRTShaderSystem Ogre)
+	importLib(OgreProperty Ogre)
+
+
+# curl
+	IF(ROR_USE_CURL)
+		SET(CURL_INCLUDE_DIRS "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/curl" CACHE PATH "path to curl headers")
+		SET(CURL_LIBRARY_DIRS "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib" CACHE PATH "path to curl dylib")
+		SET(CURL_LIBRARIES "libcurl" CACHE STRING "The curl lib to link against")
+		importLib(libcurl curl)
+	ENDIF(ROR_USE_CURL)
+
+# PThread
+	SET(PThread_INCLUDE_DIRS "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include" CACHE PATH "PThread include directory.")
+	SET(PThread_LIBRARY_DIRS "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib" CACHE STRING "PThread: library directory.")
+	INCLUDE_DIRECTORIES(${PThread_INCLUDE_DIRS})
+
+# OpenAL
+	SET(OPENAL_LIBRARY_DIR "${rorbuild_root}/include/${TARGET_DIR}/OpenAL/${BUILD_CONFIGURATION}")
+	SET(OPENAL_LIBRARIES ${OPENAL_LIBRARY})
+
+# RoR optional components
+# -----------------------
+	MESSAGE("")
+	MESSAGE("RoR optional components")
+	MESSAGE("------------------------")
+# MyGUI
+	IF(ROR_USE_MYGUI)
+		SET(MYGUI_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/MyGUI" CACHE PATH "The mygui include path to use")
+		importLib(MyGUIEngineStatic MyGUI)
+		importLib(MyGUI.OgrePlatform MyGUI)
+		importLib(freetype2311 MyGUI)
+		SET(MYGUI_LIBRARIES "MyGUI.OgrePlatform;MyGUIEngineStatic;freetype2311" CACHE STRING "The mygui libs to link against")
+	ENDIF(ROR_USE_MYGUI)
+
+# OpenAL
+	IF(ROR_USE_OPENAL)
+		SET(OPENAL_INCLUDE_DIRS "${rorbuild_root}/include/${build_target}/OpenAL" CACHE PATH "OpenAL: headers directory")
+		importLib(libopenal.dylib OpenALSoft)
+		SET(OPENAL_LIBRARY_DIRS "${rorbuild_root}/lib/${build_target}/OpenAL/${build_configuration}" CACHE PATH "OpenAL: libraries directory")
+		SET(OPENAL_LIBRARIES "OpenAL32" CACHE STRING "The OpenAL libraries to link against")
+	ENDIF(ROR_USE_OPENAL)
+
+# SocketW
+	IF(ROR_USE_SOCKETW)
+		SET(SOCKETW_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/SocketW" CACHE PATH "SocketW: header path")
+		importLib(mysocketw SocketW)
+		SET(SOCKETW_LIBRARY_DIRS "${rorbuild_root}/lib/${TARGET_DIR}/SocketW/${build_configuration}")
+		SET(SOCKETW_LIBRARIES    "libSocketW" CACHE STRING "SocketW: library file")
+	ENDIF(ROR_USE_SOCKETW)
+
+# MoFileReader
+	IF(ROR_USE_MOFILEREADER)
+		SET(MOFILEREADER_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/MoFileReader" CACHE PATH "MoFileReader: headers directory")
+		importLib(moFileReader.static MoFileReader)
+		SET(MOFILEREADER_LIBRARIES    "moFileReader.static" CACHE STRING "MoFileReader library to link against.")
+	ENDIF(ROR_USE_MOFILEREADER)
+
+# PageD
+	IF(ROR_USE_PAGED)
+		SET(PAGED_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/PagedGeometry" CACHE PATH "PagedGeometry: headers directory")
+		importLib(PagedGeometry PagedGeometry)
+		# SET(PAGED_LIBRARIES    "PagedGeometry" CACHE STRING "The paged lib to link against")
+		SET(PAGED_LIBRARY_DIRS "${rorbuild_root}/lib/${TARGET_DIR}/PagedGeometry/${build_configuration}" CACHE PATH "PagedGeometry: library directory")
+	ENDIF(ROR_USE_PAGED)
+
+# Caelum
+	IF(ROR_USE_CAELUM)
+		SET(CAELUM_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/Caelum" CACHE PATH "Caelum: headers directory")
+		importLib(Caelum Caelum)
+		SET(CAELUM_LIBRARIES    "Caelum" CACHE STRING "The Caelum library to link against.")
+	ENDIF(ROR_USE_CAELUM)
+
+# CrashRpt
+	IF(ROR_USE_CRASHRPT)
+		SET(CRASHRPT_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/CrashRpt" CACHE PATH "CrashRpt: headers directory")
+		SET(CRASHRPT_LIBRARY_DIRS "${rorbuild_root}/lib/${TARGET_DIR}/CrashRpt" CACHE PATH "CrashRpt: library directory")
+		SET(CRASHRPT_LIBRARIES    "CrashRpt1300.lib" CACHE STRING "The CrashRpt library to link against.")
+	ENDIF(ROR_USE_CRASHRPT)
+
+# AngelScript
+	IF(ROR_USE_ANGELSCRIPT)
+		SET(ANGELSCRIPT_INCLUDE_DIRS "${rorbuild_root}/include/${TARGET_DIR}/AngelScript" CACHE PATH "AngelScript: headers")
+		SET(ANGELSCRIPT_LIBRARY_DIRS "${rorbuild_root}/lib/${TARGET_DIR}/AngelScript/${build_configuration}" CACHE PATH "AngelScript: library path")
+		importLib(libAngelscript AngelScript)
+		SET(ANGELSCRIPT_LIBRARIES "Angelscript" CACHE PATH "AngelScript: libraries to link against")
+	ENDIF(ROR_USE_ANGELSCRIPT)
+
+
+
+
+
+
+# =============================================================================
+# Linux
+# =============================================================================
+
+ELSEIF(UNIX)
+   FIND_PACKAGE(PkgConfig)
+   PKG_CHECK_MODULES(GTK gtk+-2.0 REQUIRED)
+   PKG_CHECK_MODULES(GTK_PIXBUF gdk-pixbuf-2.0 REQUIRED)
+   INCLUDE_DIRECTORIES(${GTK_INCLUDE_DIRS})
+   INCLUDE_DIRECTORIES(${GTK_PIXBUF_INCLUDE_DIRS})
+
+   # Ogre basics
+   PKG_CHECK_MODULES(Ogre OGRE REQUIRED)
+
+   # Ogre components
+   PKG_CHECK_MODULES(Ogre_Terrain  OGRE-Terrain         REQUIRED)
+   PKG_CHECK_MODULES(Ogre_Paging   OGRE-Paging          REQUIRED)
+   PKG_CHECK_MODULES(Ogre_RTShader OGRE-RTShaderSystem  REQUIRED)
+   
+
+   PKG_CHECK_MODULES(Ois OIS REQUIRED)
+
+   FIND_PACKAGE(CURL)
+   IF(CURL_FOUND)
+	SET(CURL_INCLUDE_DIRS ${CURL_INCLUDE_DIR})
+	SET(CURL_LIBRARIES ${CURL_LIBRARY})
+	SET(ROR_USE_CURL ON)
+   ELSE()
+	SET(ROR_USE_CURL OFF)
+   ENDIF(CURL_FOUND)
+
+   
+   # using cmake fingd modules
+   # Open-AL
+   FIND_PACKAGE(OpenAL)
+   IF(OPENAL_FOUND)
+      SET(OPENAL_INCLUDE_DIRS ${OPENAL_INCLUDE_DIR})
+      SET(OPENAL_LIBRARIES ${OPENAL_LIBRARY})
+      SET(ROR_USE_OPENAL ON)
+   ELSE()
+      SET(ROR_USE_OPENAL OFF)
+   ENDIF(OPENAL_FOUND)
+
+   # using pkg-config
+   # MyGUI
+   PKG_CHECK_MODULES(MYGUI MYGUI)
+   IF(MYGUI_FOUND)
+      find_library(MYGUI_OGRE_PLATFORM MyGUI.OgrePlatform)
+      SET(MYGUI_LIBRARIES ${MYGUI_LIBRARIES} ${MYGUI_OGRE_PLATFORM})
+      # add our mygui BaseLayout
+      SET(MYGUI_INCLUDE_DIRS ${MYGUI_INCLUDE_DIRS})
+      SET(ROR_USE_MYGUI ON)
+   ELSE()
+      SET(ROR_USE_MYGUI OFF)
+   ENDIF(MYGUI_FOUND)
+
+   # SocketW
+   find_path(SOCKETW_INCLUDE_DIRS "SocketW.h")
+   IF(SOCKETW_INCLUDE_DIRS)
+      find_library(SOCKETW_LIBRARIES "SocketW")
+      SET(ROR_USE_SOCKETW ON)
+   ELSE()
+      SET(ROR_USE_SOCKETW OFF)
+   ENDIF(SOCKETW_INCLUDE_DIRS)
+
+   # Paged Geometry
+   find_path(PAGED_INCLUDE_DIRS "PagedGeometry/PagedGeometry.h")
+   IF(PAGED_INCLUDE_DIRS)
+      SET(PAGED_INCLUDE_DIRS "${PAGED_INCLUDE_DIRS};${PAGED_INCLUDE_DIRS}/PagedGeometry")
+      find_library(PAGED_LIBRARIES "PagedGeometry")
+      SET(ROR_USE_PAGED ON)
+   ELSE()
+      SET(ROR_USE_PAGED OFF)
+   ENDIF(PAGED_INCLUDE_DIRS)
+
+   # Caelum
+   find_path(CAELUM_INCLUDE_DIRS "Caelum/Caelum.h")
+   IF(CAELUM_INCLUDE_DIRS)
+      SET(CAELUM_INCLUDE_DIRS "${CAELUM_INCLUDE_DIRS}/Caelum")
+      find_library(CAELUM_LIBRARIES "Caelum")
+      SET(ROR_USE_CAELUM ON)
+   ELSE()
+      SET(ROR_USE_CAELUM OFF)
+   ENDIF(CAELUM_INCLUDE_DIRS)
+
+   # Angelscript
+   find_path(ANGELSCRIPT_INCLUDE_DIRS "angelscript.h")
+   IF(ANGELSCRIPT_INCLUDE_DIRS)
+      find_library(ANGELSCRIPT_LIBRARIES "angelscript")
+      # add our addons to the include path
+      SET(ANGELSCRIPT_INCLUDE_DIRS "${ANGELSCRIPT_INCLUDE_DIRS};${ror_source_dir}/source/angelscript_addons")
+      SET(ROR_USE_ANGELSCRIPT ON)
+   ELSE()
+      SET(ROR_USE_ANGELSCRIPT OFF)
+   ENDIF(ANGELSCRIPT_INCLUDE_DIRS)
+
+   SET(ROR_USE_CRASHRPT FALSE)
+   SET(ROR_USE_OIS_G27 FALSE)
+ENDIF(WIN32)

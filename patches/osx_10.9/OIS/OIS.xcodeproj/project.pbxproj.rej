@@ -1,0 +1,26 @@
+***************
+*** 568,575 ****
+  		0043D84E0C3564F8007ACDF6 /* Project object */ = {
+  			isa = PBXProject;
+  			buildConfigurationList = 0043D84F0C3564F8007ACDF6 /* Build configuration list for PBXProject "OIS" */;
+- 			compatibilityVersion = "Xcode 2.4";
+  			hasScannedForEncodings = 0;
+  			mainGroup = 0043D84C0C3564F8007ACDF6;
+  			productRefGroup = 0043D85E0C356509007ACDF6 /* Products */;
+  			projectDirPath = "";
+--- 604,618 ----
+  		0043D84E0C3564F8007ACDF6 /* Project object */ = {
+  			isa = PBXProject;
+  			buildConfigurationList = 0043D84F0C3564F8007ACDF6 /* Build configuration list for PBXProject "OIS" */;
++ 			compatibilityVersion = "Xcode 3.0";
++ 			developmentRegion = English;
+  			hasScannedForEncodings = 0;
++ 			knownRegions = (
++ 				English,
++ 				Japanese,
++ 				French,
++ 				German,
++ 			);
+  			mainGroup = 0043D84C0C3564F8007ACDF6;
+  			productRefGroup = 0043D85E0C356509007ACDF6 /* Products */;
+  			projectDirPath = "";

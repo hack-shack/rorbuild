@@ -1,0 +1,1477 @@
+# This file takes priority over the project's default value.
+# pyBuilder loads it in during the configure phase of Ogre,
+# and overrides Ogre's defaults with these below.
+
+
+//No help, variable specified on the command line.
+BOOST_LIBRARYDIR:PATH=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/lib/[osx_10.9]/Boost
+
+//No help, variable specified on the command line.
+BOOST_ROOT:PATH=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Boost/boost
+
+//Boost chrono library (debug)
+Boost_CHRONO_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_chrono-mt.a
+
+//Boost chrono library (release)
+Boost_CHRONO_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_chrono-mt.a
+
+//Boost date_time library (debug)
+Boost_DATE_TIME_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_date_time-mt.a
+
+//Boost date_time library (release)
+Boost_DATE_TIME_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_date_time-mt.a
+
+//No help, variable specified on the command line.
+Boost_DEBUG:UNINITIALIZED=1
+
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=Boost_DIR-NOTFOUND
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/usr/local/include
+
+//Boost library directory
+Boost_LIBRARY_DIR:PATH=/usr/local/lib
+
+//Boost system library (debug)
+Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_system-mt.a
+
+//Boost system library (release)
+Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_system-mt.a
+
+//Boost thread library (debug)
+Boost_THREAD_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libboost_thread-mt.a
+
+//Boost thread library (release)
+Boost_THREAD_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libboost_thread-mt.a
+
+//Path to a program.
+CMAKE_AR:FILEPATH=/opt/local/bin/ar
+
+//Choose the type of build, options are: None (CMAKE_CXX_FLAGS
+// or CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
+CMAKE_BUILD_TYPE:STRING=RelWithDebInfo
+
+//Semicolon separated list of supported configuration types, only
+// supports Debug, Release, MinSizeRel, and RelWithDebInfo, anything
+// else will be ignored.
+CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release;MinSizeRel;RelWithDebInfo
+
+//Flags used by the compiler during all build types.
+CMAKE_CXX_FLAGS:STRING=
+
+//Flags used by the compiler during debug builds.
+CMAKE_CXX_FLAGS_DEBUG:STRING=-g
+
+//Flags used by the compiler during release minsize builds.
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the compiler during release builds (/MD /Ob1 /Oi
+// /Ot /Oy /Gs will produce slightly less optimized but smaller
+// files).
+CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+
+//Flags used by the compiler during Release with Debug Info builds.
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Flags used by the compiler during all build types.
+CMAKE_C_FLAGS:STRING=
+
+//Flags used by the compiler during debug builds.
+CMAKE_C_FLAGS_DEBUG:STRING=-g
+
+//Flags used by the compiler during release minsize builds.
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the compiler during release builds (/MD /Ob1 /Oi
+// /Ot /Oy /Gs will produce slightly less optimized but smaller
+// files).
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+
+//Flags used by the compiler during Release with Debug Info builds.
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Flags used by the linker.
+CMAKE_EXE_LINKER_FLAGS:STRING= -L/opt/local/lib
+
+//Flags used by the linker during debug builds.
+CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
+
+//Flags used by the linker during release minsize builds.
+CMAKE_EXE_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during release builds.
+CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
+
+//Flags used by the linker during Release with Debug Info builds.
+CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+//Path to a program.
+CMAKE_INSTALL_NAME_TOOL:FILEPATH=/opt/local/bin/install_name_tool
+
+//OGRE install prefix
+CMAKE_INSTALL_PREFIX:PATH=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/sdk
+
+//Path to a program.
+CMAKE_LINKER:FILEPATH=/opt/local/bin/ld
+
+//make program
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/local/Cellar/cmake/2.8.11.1/bin/cmakexbuild
+
+//Flags used by the linker during the creation of modules.
+CMAKE_MODULE_LINKER_FLAGS:STRING= -L/opt/local/lib
+
+//Flags used by the linker during debug builds.
+CMAKE_MODULE_LINKER_FLAGS_DEBUG:STRING=
+
+//Flags used by the linker during release minsize builds.
+CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during release builds.
+CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
+
+//Flags used by the linker during Release with Debug Info builds.
+CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+//Path to a program.
+CMAKE_NM:FILEPATH=/opt/local/bin/nm
+
+//Path to a program.
+CMAKE_OBJCOPY:FILEPATH=CMAKE_OBJCOPY-NOTFOUND
+
+//Path to a program.
+CMAKE_OBJDUMP:FILEPATH=CMAKE_OBJDUMP-NOTFOUND
+
+//Build architectures for OSX
+CMAKE_OSX_ARCHITECTURES:STRING=i386
+
+//Minimum OS X version to target for deployment (at runtime); newer
+// APIs weak linked. Set to empty string for default value.
+CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
+
+//The product will be built against the headers and libraries located
+// inside the indicated SDK.
+CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+
+//Value Computed by CMake
+CMAKE_PROJECT_NAME:STATIC=OGRE
+
+//Path to a program.
+CMAKE_RANLIB:FILEPATH=/opt/local/bin/ranlib
+
+//Flags used by the linker during the creation of dll's.
+CMAKE_SHARED_LINKER_FLAGS:STRING= -L/opt/local/lib
+
+//Flags used by the linker during debug builds.
+CMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=
+
+//Flags used by the linker during release minsize builds.
+CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=
+
+//Flags used by the linker during release builds.
+CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=
+
+//Flags used by the linker during Release with Debug Info builds.
+CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+//If set, runtime paths are not added when installing shared libraries,
+// but are added when building.
+CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
+
+//If set, runtime paths are not added when using shared libraries.
+CMAKE_SKIP_RPATH:BOOL=NO
+
+//Path to a program.
+CMAKE_STRIP:FILEPATH=/opt/local/bin/strip
+
+//If true, cmake will use relative paths in makefiles and projects.
+CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
+
+//If this value is on, makefiles will be generated without the
+// .SILENT directive, and all commands will be echoed to the console
+// during the make.  This is useful for debugging only. With Visual
+// Studio IDE projects all commands are done without /nologo.
+CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Enable to build OSX bundles
+CPACK_BINARY_BUNDLE:BOOL=OFF
+
+//Enable to build Debian packages
+CPACK_BINARY_DEB:BOOL=OFF
+
+//Enable to build OSX Drag And Drop package
+CPACK_BINARY_DRAGNDROP:BOOL=OFF
+
+//Enable to build NSIS packages
+CPACK_BINARY_NSIS:BOOL=OFF
+
+//Enable to build OSX X11 packages
+CPACK_BINARY_OSXX11:BOOL=OFF
+
+//Enable to build PackageMaker packages
+CPACK_BINARY_PACKAGEMAKER:BOOL=ON
+
+//Enable to build RPM packages
+CPACK_BINARY_RPM:BOOL=OFF
+
+//Enable to build STGZ packages
+CPACK_BINARY_STGZ:BOOL=ON
+
+//Enable to build TBZ2 packages
+CPACK_BINARY_TBZ2:BOOL=OFF
+
+//Enable to build TGZ packages
+CPACK_BINARY_TGZ:BOOL=ON
+
+//Enable to build TBZ2 source packages
+CPACK_SOURCE_TBZ2:BOOL=ON
+
+//Enable to build TGZ source packages
+CPACK_SOURCE_TGZ:BOOL=ON
+
+//Enable to build TZ source packages
+CPACK_SOURCE_TZ:BOOL=ON
+
+//Enable to build ZIP source packages
+CPACK_SOURCE_ZIP:BOOL=OFF
+
+//Path to a file.
+Carbon_INCLUDE_DIR:PATH=/System/Library/Frameworks/Carbon.framework/Headers
+
+//Path to a library.
+Carbon_LIBRARY_DBG:FILEPATH=/System/Library/Frameworks/Carbon.framework
+
+//Path to a library.
+Carbon_LIBRARY_REL:FILEPATH=/System/Library/Frameworks/Carbon.framework
+
+//x
+Cg_INCLUDE_DIR:PATH=/Library/Frameworks/Cg.framework/Headers
+
+//x
+Cg_LIBRARY_DBG:FILEPATH=/Library/Frameworks/Cg.framework
+
+//x
+Cg_LIBRARY_FWK:STRING=NOTFOUND
+
+//x
+Cg_LIBRARY_REL:FILEPATH=/Library/Frameworks/Cg.framework
+
+//Path to a file.
+Cocoa_INCLUDE_DIR:PATH=/System/Library/Frameworks/Cocoa.framework/Headers
+
+//Path to a library.
+Cocoa_LIBRARY_DBG:FILEPATH=/System/Library/Frameworks/Cocoa.framework
+
+//Path to a library.
+Cocoa_LIBRARY_REL:FILEPATH=/System/Library/Frameworks/Cocoa.framework
+
+//Path to a file.
+CoreVideo_INCLUDE_DIR:PATH=/System/Library/Frameworks/CoreVideo.framework/Headers
+
+//Path to a library.
+CoreVideo_LIBRARY_DBG:FILEPATH=/System/Library/Frameworks/CoreVideo.framework
+
+//Path to a library.
+CoreVideo_LIBRARY_REL:FILEPATH=/System/Library/Frameworks/CoreVideo.framework
+
+//Path to a file.
+CppUnit_INCLUDE_DIR:PATH=CppUnit_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+CppUnit_LIBRARY_DBG:FILEPATH=CppUnit_LIBRARY_DBG-NOTFOUND
+
+//Path to a library.
+CppUnit_LIBRARY_REL:FILEPATH=CppUnit_LIBRARY_REL-NOTFOUND
+
+//Graphviz Dot tool for using Doxygen
+DOXYGEN_DOT_EXECUTABLE:FILEPATH=DOXYGEN_DOT_EXECUTABLE-NOTFOUND
+
+//Doxygen documentation generation tool (http://www.doxygen.org)
+DOXYGEN_EXECUTABLE:FILEPATH=/opt/local/bin/doxygen
+
+//Path to a file.
+FREETYPE_FT2BUILD_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a file.
+FREETYPE_INCLUDE_DIR:PATH=/usr/local/include/freetype2
+
+//Path to a library.
+FREETYPE_LIBRARY_DBG:FILEPATH=/usr/local/lib/libfreetype.dylib
+
+//Path to a library.
+FREETYPE_LIBRARY_REL:FILEPATH=/usr/local/lib/libfreetype.dylib
+
+//Path to a file.
+FreeImage_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a library.
+FreeImage_LIBRARY_DBG:FILEPATH=/usr/local/lib/libfreeimage.dylib
+
+//Path to a library.
+FreeImage_LIBRARY_REL:FILEPATH=/usr/local/lib/libfreeimage.dylib
+
+//x
+GLSL_Optimizer_INCLUDE_DIR:PATH=GLSL_Optimizer_INCLUDE_DIR-NOTFOUND
+
+//x
+GLSL_Optimizer_LIBRARY_DBG:FILEPATH=GLSL_Optimizer_LIBRARY_DBG-NOTFOUND
+
+//x
+GLSL_Optimizer_LIBRARY_FWK:STRING=NOTFOUND
+
+//x
+GLSL_Optimizer_LIBRARY_REL:FILEPATH=GLSL_Optimizer_LIBRARY_REL-NOTFOUND
+
+//x
+HLSL2GLSL_INCLUDE_DIR:PATH=HLSL2GLSL_INCLUDE_DIR-NOTFOUND
+
+//x
+HLSL2GLSL_LIBRARY_DBG:FILEPATH=HLSL2GLSL_LIBRARY_DBG-NOTFOUND
+
+//x
+HLSL2GLSL_LIBRARY_FWK:STRING=NOTFOUND
+
+//x
+HLSL2GLSL_LIBRARY_REL:FILEPATH=HLSL2GLSL_LIBRARY_REL-NOTFOUND
+
+//Path to a file.
+IOKit_INCLUDE_DIR:PATH=/System/Library/Frameworks/IOKit.framework/Headers
+
+//Path to a library.
+IOKit_LIBRARY_DBG:FILEPATH=/System/Library/Frameworks/IOKit.framework
+
+//Path to a library.
+IOKit_LIBRARY_REL:FILEPATH=/System/Library/Frameworks/IOKit.framework
+
+//Value Computed by CMake
+OGRE_BINARY_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build
+
+//Build Paging component
+OGRE_BUILD_COMPONENT_PAGING:BOOL=ON
+
+//Build Property component
+OGRE_BUILD_COMPONENT_PROPERTY:BOOL=ON
+
+//Build RTShader System component
+OGRE_BUILD_COMPONENT_RTSHADERSYSTEM:BOOL=ON
+
+//Build Terrain component
+OGRE_BUILD_COMPONENT_TERRAIN:BOOL=ON
+
+//Build Ogre for iOS
+OGRE_BUILD_PLATFORM_APPLE_IOS:BOOL=OFF
+
+//Build Ogre for Google's Native Client (NaCl)
+OGRE_BUILD_PLATFORM_NACL:BOOL=OFF
+
+//Build BSP SceneManager plugin
+OGRE_BUILD_PLUGIN_BSP:BOOL=ON
+
+//Build Cg plugin
+OGRE_BUILD_PLUGIN_CG:BOOL=ON
+
+//Build Octree SceneManager plugin
+OGRE_BUILD_PLUGIN_OCTREE:BOOL=ON
+
+//Build PCZ SceneManager plugin
+OGRE_BUILD_PLUGIN_PCZ:BOOL=ON
+
+//Build ParticleFX plugin
+OGRE_BUILD_PLUGIN_PFX:BOOL=ON
+
+//Build OpenGL RenderSystem
+OGRE_BUILD_RENDERSYSTEM_GL:BOOL=ON
+
+//Build OpenGL ES 1.x RenderSystem
+OGRE_BUILD_RENDERSYSTEM_GLES:BOOL=OFF
+
+//Build OpenGL ES 2.x RenderSystem
+OGRE_BUILD_RENDERSYSTEM_GLES2:BOOL=OFF
+
+//Build RTShader System FFP core shaders
+OGRE_BUILD_RTSHADERSYSTEM_CORE_SHADERS:BOOL=ON
+
+//Build RTShader System extensions shaders
+OGRE_BUILD_RTSHADERSYSTEM_EXT_SHADERS:BOOL=ON
+
+//Build Ogre demos
+OGRE_BUILD_SAMPLES:BOOL=0
+
+//Build the unit tests & PlayPen
+OGRE_BUILD_TESTS:BOOL=OFF
+
+//Build the command-line tools
+OGRE_BUILD_TOOLS:BOOL=ON
+
+//Specify the memory allocator to use. Possible values:
+//\n  1 - Standard allocator
+//\n  2 - nedmalloc
+//\n  3 - User-provided allocator
+//\n  4 - nedmalloc with pooling
+OGRE_CONFIG_ALLOCATOR:STRING=4
+
+//STL containers in Ogre use the custom allocator
+OGRE_CONFIG_CONTAINERS_USE_CUSTOM_ALLOCATOR:BOOL=ON
+
+//Use doubles instead of floats in Ogre
+OGRE_CONFIG_DOUBLE:BOOL=OFF
+
+//Build DDS codec.
+OGRE_CONFIG_ENABLE_DDS:BOOL=ON
+
+//Build FreeImage codec. If you disable this option, you need to
+// provide your own image handling codecs.
+OGRE_CONFIG_ENABLE_FREEIMAGE:BOOL=ON
+
+//Build PVRTC codec.
+OGRE_CONFIG_ENABLE_PVRTC:BOOL=OFF
+
+//Include Viewport orientation mode support.
+OGRE_CONFIG_ENABLE_VIEWPORT_ORIENTATIONMODE:BOOL=OFF
+
+//Build ZIP archive support. If you disable this option, you cannot
+// use ZIP archives resource locations. The samples won't work.
+OGRE_CONFIG_ENABLE_ZIP:BOOL=ON
+
+//Enable Ogre's memory tracker in debug mode
+OGRE_CONFIG_MEMTRACK_DEBUG:BOOL=OFF
+
+//Enable Ogre's memory tracker in release mode
+OGRE_CONFIG_MEMTRACK_RELEASE:BOOL=OFF
+
+//Use the new script compilers.
+OGRE_CONFIG_NEW_COMPILERS:BOOL=ON
+
+//Ogre String uses the custom allocator
+OGRE_CONFIG_STRING_USE_CUSTOM_ALLOCATOR:BOOL=OFF
+
+//Enable Ogre thread support for background loading. Possible values:
+//\n		0 - Threading off.
+//\n		1 - Full background loading.
+//\n		2 - Background resource preparation.
+OGRE_CONFIG_THREADS:STRING=2
+
+//Select the library to use for thread support. Possible values:
+//\n		boost - Boost thread library.
+//\n		poco  - Poco thread library.
+//\n		tbb   - ThreadingBuildingBlocks library.
+OGRE_CONFIG_THREAD_PROVIDER:STRING=boost
+
+//Copy dependency libs to the build directory
+OGRE_COPY_DEPENDENCIES:BOOL=ON
+
+//Path to prebuilt OGRE dependencies
+OGRE_DEPENDENCIES_DIR:PATH=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/files/ogredeps/build/src
+
+//Build executables with the full required RPATH to run from their
+// install location.
+OGRE_FULL_RPATH:BOOL=OFF
+
+//Install dependency libs needed for samples
+OGRE_INSTALL_DEPENDENCIES:BOOL=ON
+
+//Install documentation.
+OGRE_INSTALL_DOCS:BOOL=OFF
+
+//Install Ogre demos.
+OGRE_INSTALL_SAMPLES:BOOL=OFF
+
+//Install samples source files.
+OGRE_INSTALL_SAMPLES_SOURCE:BOOL=OFF
+
+//Install Ogre tools.
+OGRE_INSTALL_TOOLS:BOOL=ON
+
+//Install path for libraries, e.g. 'lib64' on some 64-bit Linux
+// distros.
+OGRE_LIB_DIRECTORY:STRING=lib
+
+//Enable internal profiling support.
+OGRE_PROFILING:BOOL=OFF
+
+//Value Computed by CMake
+OGRE_SOURCE_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre
+
+//Static build
+OGRE_STATIC:BOOL=1
+
+//Enable unity build for Ogre.
+OGRE_UNITY_BUILD:BOOL=OFF
+
+//Number of files per compilation unit in Unity build.
+OGRE_UNITY_FILES_PER_UNIT:STRING=50
+
+//Use Boost extensions
+OGRE_USE_BOOST:BOOL=ON
+
+//x
+OIS_INCLUDE_DIR:PATH=/usr/local/include/OIS
+
+//x
+OIS_LIBRARY_DBG:FILEPATH=/usr/local/lib/libOIS.a
+
+//x
+OIS_LIBRARY_FWK:STRING=NOTFOUND
+
+//x
+OIS_LIBRARY_REL:FILEPATH=/usr/local/lib/libOIS.a
+
+//Include for OpenGL on OSX
+OPENGL_INCLUDE_DIR:PATH=/System/Library/Frameworks/OpenGL.framework
+
+//OpenGL lib for OSX
+OPENGL_gl_LIBRARY:FILEPATH=/System/Library/Frameworks/OpenGL.framework
+
+//AGL lib for OSX
+OPENGL_glu_LIBRARY:FILEPATH=/System/Library/Frameworks/AGL.framework
+
+//Value Computed by CMake
+OgreMain_BINARY_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/OgreMain
+
+//Dependencies for the target
+OgreMain_LIB_DEPENDS:STATIC=optimized;/usr/local/lib/libfreetype.dylib;debug;/usr/local/lib/libfreetype.dylib;general;-framework Carbon;general;-framework Cocoa;general;/usr/local/lib/libboost_thread-mt.a;general;/usr/local/lib/libboost_date_time-mt.a;general;/usr/local/lib/libboost_system-mt.a;general;/usr/local/lib/libboost_chrono-mt.a;optimized;/usr/local/lib/libfreeimage.dylib;debug;/usr/local/lib/libfreeimage.dylib;optimized;/usr/local/lib/libzzip.dylib;debug;/usr/local/lib/libzzip.dylib;optimized;/usr/lib/libz.dylib;debug;/usr/lib/libz.dylib;
+
+//Value Computed by CMake
+OgreMain_SOURCE_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/OgreMain
+
+//Value Computed by CMake
+OgrePaging_BINARY_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/Components/Paging
+
+//Dependencies for the target
+OgrePaging_LIB_DEPENDS:STATIC=general;OgreMain;general;/usr/local/lib/libboost_thread-mt.a;general;/usr/local/lib/libboost_date_time-mt.a;general;/usr/local/lib/libboost_system-mt.a;general;/usr/local/lib/libboost_chrono-mt.a;
+
+//Value Computed by CMake
+OgrePaging_SOURCE_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/Components/Paging
+
+//Value Computed by CMake
+OgreProperty_BINARY_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/Components/Property
+
+//Dependencies for the target
+OgreProperty_LIB_DEPENDS:STATIC=general;OgreMain;general;/usr/local/lib/libboost_thread-mt.a;general;/usr/local/lib/libboost_date_time-mt.a;general;/usr/local/lib/libboost_system-mt.a;general;/usr/local/lib/libboost_chrono-mt.a;
+
+//Value Computed by CMake
+OgreProperty_SOURCE_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/Components/Property
+
+//Value Computed by CMake
+OgreRTShaderSystem_BINARY_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/Components/RTShaderSystem
+
+//Dependencies for the target
+OgreRTShaderSystem_LIB_DEPENDS:STATIC=general;OgreMain;
+
+//Value Computed by CMake
+OgreRTShaderSystem_SOURCE_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/Components/RTShaderSystem
+
+//Value Computed by CMake
+OgreTerrain_BINARY_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/Components/Terrain
+
+//Dependencies for the target
+OgreTerrain_LIB_DEPENDS:STATIC=general;OgreMain;general;OgrePaging;general;/usr/local/lib/libboost_thread-mt.a;general;/usr/local/lib/libboost_date_time-mt.a;general;/usr/local/lib/libboost_system-mt.a;general;/usr/local/lib/libboost_chrono-mt.a;
+
+//Value Computed by CMake
+OgreTerrain_SOURCE_DIR:STATIC=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/Components/Terrain
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
+
+//Path to a file.
+POCO_INCLUDE_DIR:PATH=POCO_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+POCO_LIBRARY_DBG:FILEPATH=POCO_LIBRARY_DBG-NOTFOUND
+
+//Path to a library.
+POCO_LIBRARY_REL:FILEPATH=POCO_LIBRARY_REL-NOTFOUND
+
+//Dependencies for the target
+Plugin_BSPSceneManager_LIB_DEPENDS:STATIC=general;OgreMain;
+
+//Dependencies for the target
+Plugin_CgProgramManager_LIB_DEPENDS:STATIC=general;OgreMain;general;-framework Cg;
+
+//Dependencies for the target
+Plugin_OctreeSceneManager_LIB_DEPENDS:STATIC=general;OgreMain;
+
+//Dependencies for the target
+Plugin_OctreeZone_LIB_DEPENDS:STATIC=general;OgreMain;general;Plugin_PCZSceneManager;
+
+//Dependencies for the target
+Plugin_PCZSceneManager_LIB_DEPENDS:STATIC=general;OgreMain;
+
+//Dependencies for the target
+Plugin_ParticleFX_LIB_DEPENDS:STATIC=general;OgreMain;
+
+//Dependencies for the target
+RenderSystem_GL_LIB_DEPENDS:STATIC=general;OgreMain;general;/System/Library/Frameworks/AGL.framework;general;/System/Library/Frameworks/OpenGL.framework;general;-framework Carbon;general;-framework Cocoa;general;/usr/local/lib/libboost_thread-mt.a;general;/usr/local/lib/libboost_date_time-mt.a;general;/usr/local/lib/libboost_system-mt.a;general;/usr/local/lib/libboost_chrono-mt.a;
+
+//x
+Softimage_INCLUDE_DIR:PATH=Softimage_INCLUDE_DIR-NOTFOUND
+
+//x
+Softimage_LIBRARY:FILEPATH=Softimage_LIBRARY-NOTFOUND
+
+//x
+Softimage_SICPPSDK_LIBRARY:FILEPATH=Softimage_SICPPSDK_LIBRARY-NOTFOUND
+
+//Path to a file.
+TBB_INCLUDE_DIR:PATH=TBB_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+TBB_LIBRARY_DBG:FILEPATH=TBB_LIBRARY_DBG-NOTFOUND
+
+//Path to a library.
+TBB_LIBRARY_REL:FILEPATH=TBB_LIBRARY_REL-NOTFOUND
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a library.
+ZLIB_LIBRARY_DBG:FILEPATH=/usr/lib/libz.dylib
+
+//Path to a library.
+ZLIB_LIBRARY_REL:FILEPATH=/usr/lib/libz.dylib
+
+//Path to a file.
+ZZip_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a library.
+ZZip_LIBRARY_DBG:FILEPATH=/usr/local/lib/libzzip.dylib
+
+//Path to a library.
+ZZip_LIBRARY_REL:FILEPATH=/usr/local/lib/libzzip.dylib
+
+//Path to a file.
+iOSSDK_INCLUDE_DIR:PATH=/Applications/Xcode.app/Contents/Developer/Platforms
+
+
+########################
+# INTERNAL cache entries
+########################
+
+//Stored Xcode object GUID
+ALL_BUILD_GUID_CMAKE:INTERNAL=CADA09D836234AA3A5C5810F
+//ADVANCED property for variable: BOOST_LIBRARYDIR
+BOOST_LIBRARYDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BOOST_ROOT
+BOOST_ROOT-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_CHRONO_LIBRARY_DEBUG
+Boost_CHRONO_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_CHRONO_LIBRARY_RELEASE
+Boost_CHRONO_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_DATE_TIME_LIBRARY_DEBUG
+Boost_DATE_TIME_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_DATE_TIME_LIBRARY_RELEASE
+Boost_DATE_TIME_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_INCLUDE_DIR
+Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_LIBRARY_DIR
+Boost_LIBRARY_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
+Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
+Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_THREAD_LIBRARY_DEBUG
+Boost_THREAD_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_THREAD_LIBRARY_RELEASE
+Boost_THREAD_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_AR
+CMAKE_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_BUILD_TOOL
+CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
+//What is the target build tool cmake is generating for.
+CMAKE_BUILD_TOOL:INTERNAL=/usr/local/Cellar/cmake/2.8.11.1/bin/cmakexbuild
+//This is the directory where this CMakeCache.txt was created
+CMAKE_CACHEFILE_DIR:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build
+//Major version of cmake used to create the current loaded cache
+CMAKE_CACHE_MAJOR_VERSION:INTERNAL=2
+//Minor version of cmake used to create the current loaded cache
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=8
+//Patch version of cmake used to create the current loaded cache
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=11
+//Path to CMake executable.
+CMAKE_COMMAND:INTERNAL=/usr/local/Cellar/cmake/2.8.11.1/bin/cmake
+//Path to cpack program executable.
+CMAKE_CPACK_COMMAND:INTERNAL=/usr/local/Cellar/cmake/2.8.11.1/bin/cpack
+//Path to ctest program executable.
+CMAKE_CTEST_COMMAND:INTERNAL=/usr/local/Cellar/cmake/2.8.11.1/bin/ctest
+//ADVANCED property for variable: CMAKE_CXX_FLAGS
+CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
+CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_MINSIZEREL
+CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELEASE
+CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
+CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS
+CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
+CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_MINSIZEREL
+CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELEASE
+CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
+CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Path to cache edit program executable.
+CMAKE_EDIT_COMMAND:INTERNAL=/usr/local/Cellar/cmake/2.8.11.1/bin/ccmake
+//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
+CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
+CMAKE_EXE_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_MINSIZEREL
+CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELEASE
+CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Name of generator.
+CMAKE_GENERATOR:INTERNAL=Xcode
+//Name of generator toolset.
+CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Start directory with the top level CMakeLists.txt file for this
+// project
+CMAKE_HOME_DIRECTORY:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre
+//ADVANCED property for variable: CMAKE_INSTALL_NAME_TOOL
+CMAKE_INSTALL_NAME_TOOL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_LINKER
+CMAKE_LINKER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_MAKE_PROGRAM
+CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
+CMAKE_MODULE_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_DEBUG
+CMAKE_MODULE_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL
+CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELEASE
+CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_NM
+CMAKE_NM-ADVANCED:INTERNAL=1
+//number of local generators
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=22
+//ADVANCED property for variable: CMAKE_OBJCOPY
+CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_OBJDUMP
+CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_RANLIB
+CMAKE_RANLIB-ADVANCED:INTERNAL=1
+//Path to CMake installation.
+CMAKE_ROOT:INTERNAL=/usr/local/Cellar/cmake/2.8.11.1/share/cmake
+//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
+CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
+CMAKE_SHARED_LINKER_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL
+CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_RELEASE
+CMAKE_SHARED_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO
+CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//CHECK_TYPE_SIZE: sizeof(unsigned short)
+CMAKE_SIZEOF_UNSIGNED_SHORT:INTERNAL=2
+//ADVANCED property for variable: CMAKE_SKIP_INSTALL_RPATH
+CMAKE_SKIP_INSTALL_RPATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_SKIP_RPATH
+CMAKE_SKIP_RPATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STRIP
+CMAKE_STRIP-ADVANCED:INTERNAL=1
+//uname command
+CMAKE_UNAME:INTERNAL=/usr/bin/uname
+//ADVANCED property for variable: CMAKE_USE_RELATIVE_PATHS
+CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
+CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_BUNDLE
+CPACK_BINARY_BUNDLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_DEB
+CPACK_BINARY_DEB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_DRAGNDROP
+CPACK_BINARY_DRAGNDROP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_NSIS
+CPACK_BINARY_NSIS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_OSXX11
+CPACK_BINARY_OSXX11-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_PACKAGEMAKER
+CPACK_BINARY_PACKAGEMAKER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_RPM
+CPACK_BINARY_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_STGZ
+CPACK_BINARY_STGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TBZ2
+CPACK_BINARY_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TGZ
+CPACK_BINARY_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TBZ2
+CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TGZ
+CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TZ
+CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_ZIP
+CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Carbon_INCLUDE_DIR
+Carbon_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Carbon_LIBRARY_DBG
+Carbon_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Carbon_LIBRARY_REL
+Carbon_LIBRARY_REL-ADVANCED:INTERNAL=1
+Carbon_PKGC_CFLAGS:INTERNAL=
+Carbon_PKGC_CFLAGS_I:INTERNAL=
+Carbon_PKGC_CFLAGS_OTHER:INTERNAL=
+Carbon_PKGC_Carbon_INCLUDEDIR:INTERNAL=
+Carbon_PKGC_Carbon_LIBDIR:INTERNAL=
+Carbon_PKGC_Carbon_PREFIX:INTERNAL=
+Carbon_PKGC_Carbon_VERSION:INTERNAL=
+Carbon_PKGC_FOUND:INTERNAL=
+Carbon_PKGC_INCLUDEDIR:INTERNAL=
+Carbon_PKGC_LIBDIR:INTERNAL=
+Carbon_PKGC_LIBS:INTERNAL=
+Carbon_PKGC_LIBS_L:INTERNAL=
+Carbon_PKGC_LIBS_OTHER:INTERNAL=
+Carbon_PKGC_LIBS_PATHS:INTERNAL=
+Carbon_PKGC_PREFIX:INTERNAL=
+Carbon_PKGC_STATIC_CFLAGS:INTERNAL=
+Carbon_PKGC_STATIC_CFLAGS_I:INTERNAL=
+Carbon_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+Carbon_PKGC_STATIC_LIBDIR:INTERNAL=
+Carbon_PKGC_STATIC_LIBS:INTERNAL=
+Carbon_PKGC_STATIC_LIBS_L:INTERNAL=
+Carbon_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+Carbon_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+Carbon_PKGC_VERSION:INTERNAL=
+//x
+Carbon_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: Cg_INCLUDE_DIR
+Cg_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Cg_LIBRARY_DBG
+Cg_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Cg_LIBRARY_FWK
+Cg_LIBRARY_FWK-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Cg_LIBRARY_REL
+Cg_LIBRARY_REL-ADVANCED:INTERNAL=1
+Cg_PKGC_CFLAGS:INTERNAL=
+Cg_PKGC_CFLAGS_I:INTERNAL=
+Cg_PKGC_CFLAGS_OTHER:INTERNAL=
+Cg_PKGC_Cg_INCLUDEDIR:INTERNAL=
+Cg_PKGC_Cg_LIBDIR:INTERNAL=
+Cg_PKGC_Cg_PREFIX:INTERNAL=
+Cg_PKGC_Cg_VERSION:INTERNAL=
+Cg_PKGC_FOUND:INTERNAL=
+Cg_PKGC_INCLUDEDIR:INTERNAL=
+Cg_PKGC_LIBDIR:INTERNAL=
+Cg_PKGC_LIBS:INTERNAL=
+Cg_PKGC_LIBS_L:INTERNAL=
+Cg_PKGC_LIBS_OTHER:INTERNAL=
+Cg_PKGC_LIBS_PATHS:INTERNAL=
+Cg_PKGC_PREFIX:INTERNAL=
+Cg_PKGC_STATIC_CFLAGS:INTERNAL=
+Cg_PKGC_STATIC_CFLAGS_I:INTERNAL=
+Cg_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+Cg_PKGC_STATIC_LIBDIR:INTERNAL=
+Cg_PKGC_STATIC_LIBS:INTERNAL=
+Cg_PKGC_STATIC_LIBS_L:INTERNAL=
+Cg_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+Cg_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+Cg_PKGC_VERSION:INTERNAL=
+//x
+Cg_PREFIX_PATH_INT_CHECK:INTERNAL=/Dependencies;/Dependencies;/opt/nvidia-cg-toolkit
+//ADVANCED property for variable: Cocoa_INCLUDE_DIR
+Cocoa_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Cocoa_LIBRARY_DBG
+Cocoa_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Cocoa_LIBRARY_REL
+Cocoa_LIBRARY_REL-ADVANCED:INTERNAL=1
+Cocoa_PKGC_CFLAGS:INTERNAL=
+Cocoa_PKGC_CFLAGS_I:INTERNAL=
+Cocoa_PKGC_CFLAGS_OTHER:INTERNAL=
+Cocoa_PKGC_Cocoa_INCLUDEDIR:INTERNAL=
+Cocoa_PKGC_Cocoa_LIBDIR:INTERNAL=
+Cocoa_PKGC_Cocoa_PREFIX:INTERNAL=
+Cocoa_PKGC_Cocoa_VERSION:INTERNAL=
+Cocoa_PKGC_FOUND:INTERNAL=
+Cocoa_PKGC_INCLUDEDIR:INTERNAL=
+Cocoa_PKGC_LIBDIR:INTERNAL=
+Cocoa_PKGC_LIBS:INTERNAL=
+Cocoa_PKGC_LIBS_L:INTERNAL=
+Cocoa_PKGC_LIBS_OTHER:INTERNAL=
+Cocoa_PKGC_LIBS_PATHS:INTERNAL=
+Cocoa_PKGC_PREFIX:INTERNAL=
+Cocoa_PKGC_STATIC_CFLAGS:INTERNAL=
+Cocoa_PKGC_STATIC_CFLAGS_I:INTERNAL=
+Cocoa_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+Cocoa_PKGC_STATIC_LIBDIR:INTERNAL=
+Cocoa_PKGC_STATIC_LIBS:INTERNAL=
+Cocoa_PKGC_STATIC_LIBS_L:INTERNAL=
+Cocoa_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+Cocoa_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+Cocoa_PKGC_VERSION:INTERNAL=
+//x
+Cocoa_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: CoreVideo_INCLUDE_DIR
+CoreVideo_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CoreVideo_LIBRARY_DBG
+CoreVideo_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CoreVideo_LIBRARY_REL
+CoreVideo_LIBRARY_REL-ADVANCED:INTERNAL=1
+CoreVideo_PKGC_CFLAGS:INTERNAL=
+CoreVideo_PKGC_CFLAGS_I:INTERNAL=
+CoreVideo_PKGC_CFLAGS_OTHER:INTERNAL=
+CoreVideo_PKGC_CoreVideo_INCLUDEDIR:INTERNAL=
+CoreVideo_PKGC_CoreVideo_LIBDIR:INTERNAL=
+CoreVideo_PKGC_CoreVideo_PREFIX:INTERNAL=
+CoreVideo_PKGC_CoreVideo_VERSION:INTERNAL=
+CoreVideo_PKGC_FOUND:INTERNAL=
+CoreVideo_PKGC_INCLUDEDIR:INTERNAL=
+CoreVideo_PKGC_LIBDIR:INTERNAL=
+CoreVideo_PKGC_LIBS:INTERNAL=
+CoreVideo_PKGC_LIBS_L:INTERNAL=
+CoreVideo_PKGC_LIBS_OTHER:INTERNAL=
+CoreVideo_PKGC_LIBS_PATHS:INTERNAL=
+CoreVideo_PKGC_PREFIX:INTERNAL=
+CoreVideo_PKGC_STATIC_CFLAGS:INTERNAL=
+CoreVideo_PKGC_STATIC_CFLAGS_I:INTERNAL=
+CoreVideo_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+CoreVideo_PKGC_STATIC_LIBDIR:INTERNAL=
+CoreVideo_PKGC_STATIC_LIBS:INTERNAL=
+CoreVideo_PKGC_STATIC_LIBS_L:INTERNAL=
+CoreVideo_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+CoreVideo_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+CoreVideo_PKGC_VERSION:INTERNAL=
+//x
+CoreVideo_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: CppUnit_INCLUDE_DIR
+CppUnit_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CppUnit_LIBRARY_DBG
+CppUnit_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CppUnit_LIBRARY_REL
+CppUnit_LIBRARY_REL-ADVANCED:INTERNAL=1
+CppUnit_PKGC_CFLAGS:INTERNAL=
+CppUnit_PKGC_CFLAGS_I:INTERNAL=
+CppUnit_PKGC_CFLAGS_OTHER:INTERNAL=
+CppUnit_PKGC_FOUND:INTERNAL=
+CppUnit_PKGC_INCLUDEDIR:INTERNAL=
+CppUnit_PKGC_LIBDIR:INTERNAL=
+CppUnit_PKGC_LIBS:INTERNAL=
+CppUnit_PKGC_LIBS_L:INTERNAL=
+CppUnit_PKGC_LIBS_OTHER:INTERNAL=
+CppUnit_PKGC_LIBS_PATHS:INTERNAL=
+CppUnit_PKGC_PREFIX:INTERNAL=
+CppUnit_PKGC_STATIC_CFLAGS:INTERNAL=
+CppUnit_PKGC_STATIC_CFLAGS_I:INTERNAL=
+CppUnit_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+CppUnit_PKGC_STATIC_LIBDIR:INTERNAL=
+CppUnit_PKGC_STATIC_LIBS:INTERNAL=
+CppUnit_PKGC_STATIC_LIBS_L:INTERNAL=
+CppUnit_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+CppUnit_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+CppUnit_PKGC_VERSION:INTERNAL=
+CppUnit_PKGC_cppunit_INCLUDEDIR:INTERNAL=
+CppUnit_PKGC_cppunit_LIBDIR:INTERNAL=
+CppUnit_PKGC_cppunit_PREFIX:INTERNAL=
+CppUnit_PKGC_cppunit_VERSION:INTERNAL=
+//x
+CppUnit_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: DOXYGEN_DOT_EXECUTABLE
+DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DOXYGEN_EXECUTABLE
+DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
+//Details about finding Doxygen
+FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/opt/local/bin/doxygen][v()]
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/System/Library/Frameworks/OpenGL.framework][v()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.28()]
+//ADVANCED property for variable: FREETYPE_FT2BUILD_INCLUDE_DIR
+FREETYPE_FT2BUILD_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_INCLUDE_DIR
+FREETYPE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_LIBRARY_DBG
+FREETYPE_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FREETYPE_LIBRARY_REL
+FREETYPE_LIBRARY_REL-ADVANCED:INTERNAL=1
+FREETYPE_PKGC_CFLAGS:INTERNAL=-I/usr/local/Cellar/freetype/2.4.11/include/freetype2;-I/usr/local/Cellar/freetype/2.4.11/include
+FREETYPE_PKGC_CFLAGS_I:INTERNAL=
+FREETYPE_PKGC_CFLAGS_OTHER:INTERNAL=
+FREETYPE_PKGC_FOUND:INTERNAL=1
+FREETYPE_PKGC_INCLUDEDIR:INTERNAL=/usr/local/Cellar/freetype/2.4.11/include
+FREETYPE_PKGC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/freetype/2.4.11/include/freetype2;/usr/local/Cellar/freetype/2.4.11/include
+FREETYPE_PKGC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/freetype/2.4.11/lib;-lfreetype
+FREETYPE_PKGC_LDFLAGS_OTHER:INTERNAL=
+FREETYPE_PKGC_LIBDIR:INTERNAL=/usr/local/Cellar/freetype/2.4.11/lib
+FREETYPE_PKGC_LIBRARIES:INTERNAL=freetype
+FREETYPE_PKGC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/freetype/2.4.11/lib
+FREETYPE_PKGC_LIBS:INTERNAL=
+FREETYPE_PKGC_LIBS_L:INTERNAL=
+FREETYPE_PKGC_LIBS_OTHER:INTERNAL=
+FREETYPE_PKGC_LIBS_PATHS:INTERNAL=
+FREETYPE_PKGC_PREFIX:INTERNAL=/usr/local/Cellar/freetype/2.4.11
+FREETYPE_PKGC_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/freetype/2.4.11/include/freetype2;-I/usr/local/Cellar/freetype/2.4.11/include
+FREETYPE_PKGC_STATIC_CFLAGS_I:INTERNAL=
+FREETYPE_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+FREETYPE_PKGC_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/freetype/2.4.11/include/freetype2;/usr/local/Cellar/freetype/2.4.11/include
+FREETYPE_PKGC_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/freetype/2.4.11/lib;-lfreetype;-lz;-lbz2
+FREETYPE_PKGC_STATIC_LDFLAGS_OTHER:INTERNAL=
+FREETYPE_PKGC_STATIC_LIBDIR:INTERNAL=
+FREETYPE_PKGC_STATIC_LIBRARIES:INTERNAL=freetype;z;bz2
+FREETYPE_PKGC_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/freetype/2.4.11/lib
+FREETYPE_PKGC_STATIC_LIBS:INTERNAL=
+FREETYPE_PKGC_STATIC_LIBS_L:INTERNAL=
+FREETYPE_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+FREETYPE_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+FREETYPE_PKGC_VERSION:INTERNAL=16.0.10
+FREETYPE_PKGC_freetype2_INCLUDEDIR:INTERNAL=
+FREETYPE_PKGC_freetype2_LIBDIR:INTERNAL=
+FREETYPE_PKGC_freetype2_PREFIX:INTERNAL=
+FREETYPE_PKGC_freetype2_VERSION:INTERNAL=
+//x
+FREETYPE_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: FreeImage_INCLUDE_DIR
+FreeImage_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FreeImage_LIBRARY_DBG
+FreeImage_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FreeImage_LIBRARY_REL
+FreeImage_LIBRARY_REL-ADVANCED:INTERNAL=1
+FreeImage_PKGC_CFLAGS:INTERNAL=
+FreeImage_PKGC_CFLAGS_I:INTERNAL=
+FreeImage_PKGC_CFLAGS_OTHER:INTERNAL=
+FreeImage_PKGC_FOUND:INTERNAL=
+FreeImage_PKGC_INCLUDEDIR:INTERNAL=
+FreeImage_PKGC_LIBDIR:INTERNAL=
+FreeImage_PKGC_LIBS:INTERNAL=
+FreeImage_PKGC_LIBS_L:INTERNAL=
+FreeImage_PKGC_LIBS_OTHER:INTERNAL=
+FreeImage_PKGC_LIBS_PATHS:INTERNAL=
+FreeImage_PKGC_PREFIX:INTERNAL=
+FreeImage_PKGC_STATIC_CFLAGS:INTERNAL=
+FreeImage_PKGC_STATIC_CFLAGS_I:INTERNAL=
+FreeImage_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+FreeImage_PKGC_STATIC_LIBDIR:INTERNAL=
+FreeImage_PKGC_STATIC_LIBS:INTERNAL=
+FreeImage_PKGC_STATIC_LIBS_L:INTERNAL=
+FreeImage_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+FreeImage_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+FreeImage_PKGC_VERSION:INTERNAL=
+FreeImage_PKGC_freeimage_INCLUDEDIR:INTERNAL=
+FreeImage_PKGC_freeimage_LIBDIR:INTERNAL=
+FreeImage_PKGC_freeimage_PREFIX:INTERNAL=
+FreeImage_PKGC_freeimage_VERSION:INTERNAL=
+//x
+FreeImage_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: GLSL_Optimizer_INCLUDE_DIR
+GLSL_Optimizer_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLSL_Optimizer_LIBRARY_DBG
+GLSL_Optimizer_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLSL_Optimizer_LIBRARY_FWK
+GLSL_Optimizer_LIBRARY_FWK-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLSL_Optimizer_LIBRARY_REL
+GLSL_Optimizer_LIBRARY_REL-ADVANCED:INTERNAL=1
+GLSL_Optimizer_PKGC_CFLAGS:INTERNAL=
+GLSL_Optimizer_PKGC_CFLAGS_I:INTERNAL=
+GLSL_Optimizer_PKGC_CFLAGS_OTHER:INTERNAL=
+GLSL_Optimizer_PKGC_FOUND:INTERNAL=
+GLSL_Optimizer_PKGC_GLSL_Optimizer_INCLUDEDIR:INTERNAL=
+GLSL_Optimizer_PKGC_GLSL_Optimizer_LIBDIR:INTERNAL=
+GLSL_Optimizer_PKGC_GLSL_Optimizer_PREFIX:INTERNAL=
+GLSL_Optimizer_PKGC_GLSL_Optimizer_VERSION:INTERNAL=
+GLSL_Optimizer_PKGC_INCLUDEDIR:INTERNAL=
+GLSL_Optimizer_PKGC_LIBDIR:INTERNAL=
+GLSL_Optimizer_PKGC_LIBS:INTERNAL=
+GLSL_Optimizer_PKGC_LIBS_L:INTERNAL=
+GLSL_Optimizer_PKGC_LIBS_OTHER:INTERNAL=
+GLSL_Optimizer_PKGC_LIBS_PATHS:INTERNAL=
+GLSL_Optimizer_PKGC_PREFIX:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_CFLAGS:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_CFLAGS_I:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_LIBDIR:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_LIBS:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_LIBS_L:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+GLSL_Optimizer_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+GLSL_Optimizer_PKGC_VERSION:INTERNAL=
+//x
+GLSL_Optimizer_PREFIX_PATH_INT_CHECK:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/files/ogredeps/build/src;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/Dependencies;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/Dependencies;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/../Dependencies;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/../Dependencies;/usr/local;/usr/lib/i386-linux-gnu
+//Result of TRY_COMPILE
+HAVE_CMAKE_SIZEOF_UNSIGNED_SHORT:INTERNAL=TRUE
+//Result of TRY_COMPILE
+HAVE_OGRE_PTR_SIZE:INTERNAL=TRUE
+//Result of TRY_COMPILE
+HAVE_OGRE_TEST_BIG_ENDIAN:INTERNAL=TRUE
+//Have include stddef.h
+HAVE_STDDEF_H:INTERNAL=1
+//Have include stdint.h
+HAVE_STDINT_H:INTERNAL=1
+//Have include sys/types.h
+HAVE_SYS_TYPES_H:INTERNAL=1
+//ADVANCED property for variable: HLSL2GLSL_INCLUDE_DIR
+HLSL2GLSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: HLSL2GLSL_LIBRARY_DBG
+HLSL2GLSL_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: HLSL2GLSL_LIBRARY_FWK
+HLSL2GLSL_LIBRARY_FWK-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: HLSL2GLSL_LIBRARY_REL
+HLSL2GLSL_LIBRARY_REL-ADVANCED:INTERNAL=1
+HLSL2GLSL_PKGC_CFLAGS:INTERNAL=
+HLSL2GLSL_PKGC_CFLAGS_I:INTERNAL=
+HLSL2GLSL_PKGC_CFLAGS_OTHER:INTERNAL=
+HLSL2GLSL_PKGC_FOUND:INTERNAL=
+HLSL2GLSL_PKGC_HLSL2GLSL_INCLUDEDIR:INTERNAL=
+HLSL2GLSL_PKGC_HLSL2GLSL_LIBDIR:INTERNAL=
+HLSL2GLSL_PKGC_HLSL2GLSL_PREFIX:INTERNAL=
+HLSL2GLSL_PKGC_HLSL2GLSL_VERSION:INTERNAL=
+HLSL2GLSL_PKGC_INCLUDEDIR:INTERNAL=
+HLSL2GLSL_PKGC_LIBDIR:INTERNAL=
+HLSL2GLSL_PKGC_LIBS:INTERNAL=
+HLSL2GLSL_PKGC_LIBS_L:INTERNAL=
+HLSL2GLSL_PKGC_LIBS_OTHER:INTERNAL=
+HLSL2GLSL_PKGC_LIBS_PATHS:INTERNAL=
+HLSL2GLSL_PKGC_PREFIX:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_CFLAGS:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_CFLAGS_I:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_LIBDIR:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_LIBS:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_LIBS_L:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+HLSL2GLSL_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+HLSL2GLSL_PKGC_VERSION:INTERNAL=
+//x
+HLSL2GLSL_PREFIX_PATH_INT_CHECK:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/files/ogredeps/build/src;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/Dependencies;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/Dependencies;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre-build/../Dependencies;/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Ogre/../Dependencies;/usr/local;/usr/lib/i386-linux-gnu
+//ADVANCED property for variable: IOKit_INCLUDE_DIR
+IOKit_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IOKit_LIBRARY_DBG
+IOKit_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IOKit_LIBRARY_REL
+IOKit_LIBRARY_REL-ADVANCED:INTERNAL=1
+IOKit_PKGC_CFLAGS:INTERNAL=
+IOKit_PKGC_CFLAGS_I:INTERNAL=
+IOKit_PKGC_CFLAGS_OTHER:INTERNAL=
+IOKit_PKGC_FOUND:INTERNAL=
+IOKit_PKGC_INCLUDEDIR:INTERNAL=
+IOKit_PKGC_IOKit_INCLUDEDIR:INTERNAL=
+IOKit_PKGC_IOKit_LIBDIR:INTERNAL=
+IOKit_PKGC_IOKit_PREFIX:INTERNAL=
+IOKit_PKGC_IOKit_VERSION:INTERNAL=
+IOKit_PKGC_LIBDIR:INTERNAL=
+IOKit_PKGC_LIBS:INTERNAL=
+IOKit_PKGC_LIBS_L:INTERNAL=
+IOKit_PKGC_LIBS_OTHER:INTERNAL=
+IOKit_PKGC_LIBS_PATHS:INTERNAL=
+IOKit_PKGC_PREFIX:INTERNAL=
+IOKit_PKGC_STATIC_CFLAGS:INTERNAL=
+IOKit_PKGC_STATIC_CFLAGS_I:INTERNAL=
+IOKit_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+IOKit_PKGC_STATIC_LIBDIR:INTERNAL=
+IOKit_PKGC_STATIC_LIBS:INTERNAL=
+IOKit_PKGC_STATIC_LIBS_L:INTERNAL=
+IOKit_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+IOKit_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+IOKit_PKGC_VERSION:INTERNAL=
+//x
+IOKit_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: OGRE_BUILD_RTSHADERSYSTEM_CORE_SHADERS
+OGRE_BUILD_RTSHADERSYSTEM_CORE_SHADERS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_BUILD_RTSHADERSYSTEM_EXT_SHADERS
+OGRE_BUILD_RTSHADERSYSTEM_EXT_SHADERS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_ALLOCATOR
+OGRE_CONFIG_ALLOCATOR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_CONTAINERS_USE_CUSTOM_ALLOCATOR
+OGRE_CONFIG_CONTAINERS_USE_CUSTOM_ALLOCATOR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_DOUBLE
+OGRE_CONFIG_DOUBLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_ENABLE_DDS
+OGRE_CONFIG_ENABLE_DDS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_ENABLE_FREEIMAGE
+OGRE_CONFIG_ENABLE_FREEIMAGE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_ENABLE_PVRTC
+OGRE_CONFIG_ENABLE_PVRTC-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_ENABLE_VIEWPORT_ORIENTATIONMODE
+OGRE_CONFIG_ENABLE_VIEWPORT_ORIENTATIONMODE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_ENABLE_ZIP
+OGRE_CONFIG_ENABLE_ZIP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_MEMTRACK_DEBUG
+OGRE_CONFIG_MEMTRACK_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_MEMTRACK_RELEASE
+OGRE_CONFIG_MEMTRACK_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_NEW_COMPILERS
+OGRE_CONFIG_NEW_COMPILERS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_CONFIG_STRING_USE_CUSTOM_ALLOCATOR
+OGRE_CONFIG_STRING_USE_CUSTOM_ALLOCATOR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_FULL_RPATH
+OGRE_FULL_RPATH-ADVANCED:INTERNAL=1
+//Test OGRE_GCC_HAS_SSE
+OGRE_GCC_HAS_SSE:INTERNAL=1
+//Test OGRE_GCC_VISIBILITY
+OGRE_GCC_VISIBILITY:INTERNAL=1
+//ADVANCED property for variable: OGRE_INSTALL_SAMPLES_SOURCE
+OGRE_INSTALL_SAMPLES_SOURCE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_LIB_DIRECTORY
+OGRE_LIB_DIRECTORY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OGRE_PROFILING
+OGRE_PROFILING-ADVANCED:INTERNAL=1
+//CHECK_TYPE_SIZE: sizeof(void*)
+OGRE_PTR_SIZE:INTERNAL=4
+//Result of TEST_BIG_ENDIAN
+OGRE_TEST_BIG_ENDIAN:INTERNAL=0
+//ADVANCED property for variable: OGRE_USE_BOOST
+OGRE_USE_BOOST-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OIS_INCLUDE_DIR
+OIS_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OIS_LIBRARY_DBG
+OIS_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OIS_LIBRARY_FWK
+OIS_LIBRARY_FWK-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OIS_LIBRARY_REL
+OIS_LIBRARY_REL-ADVANCED:INTERNAL=1
+OIS_PKGC_CFLAGS:INTERNAL=
+OIS_PKGC_CFLAGS_I:INTERNAL=
+OIS_PKGC_CFLAGS_OTHER:INTERNAL=
+OIS_PKGC_FOUND:INTERNAL=
+OIS_PKGC_INCLUDEDIR:INTERNAL=
+OIS_PKGC_LIBDIR:INTERNAL=
+OIS_PKGC_LIBS:INTERNAL=
+OIS_PKGC_LIBS_L:INTERNAL=
+OIS_PKGC_LIBS_OTHER:INTERNAL=
+OIS_PKGC_LIBS_PATHS:INTERNAL=
+OIS_PKGC_OIS_INCLUDEDIR:INTERNAL=
+OIS_PKGC_OIS_LIBDIR:INTERNAL=
+OIS_PKGC_OIS_PREFIX:INTERNAL=
+OIS_PKGC_OIS_VERSION:INTERNAL=
+OIS_PKGC_PREFIX:INTERNAL=
+OIS_PKGC_STATIC_CFLAGS:INTERNAL=
+OIS_PKGC_STATIC_CFLAGS_I:INTERNAL=
+OIS_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+OIS_PKGC_STATIC_LIBDIR:INTERNAL=
+OIS_PKGC_STATIC_LIBS:INTERNAL=
+OIS_PKGC_STATIC_LIBS_L:INTERNAL=
+OIS_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+OIS_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+OIS_PKGC_VERSION:INTERNAL=
+//x
+OIS_PREFIX_PATH_INT_CHECK:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/files/ogredeps/build/src;/iOSDependencies;/iOSDependencies;/Dependencies;/Dependencies
+//ADVANCED property for variable: OPENGL_INCLUDE_DIR
+OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//Stored Xcode object GUID
+OgreMain_GUID_CMAKE:INTERNAL=1E03A320336A42A0AF1A952D
+//Stored Xcode object GUID
+OgreMeshUpgrader_GUID_CMAKE:INTERNAL=A6E7B6F34E18477193487D6C
+//Stored Xcode object GUID
+OgrePaging_GUID_CMAKE:INTERNAL=0AB22BD637F84D2497A392A2
+//Stored Xcode object GUID
+OgreProperty_GUID_CMAKE:INTERNAL=BDF5226B188246A0B27BBACF
+//Stored Xcode object GUID
+OgreRTShaderSystem_GUID_CMAKE:INTERNAL=4A328AF6766048608E034A44
+//Stored Xcode object GUID
+OgreTerrain_GUID_CMAKE:INTERNAL=DEECD75B4A6342F0A2F0BD6C
+//Stored Xcode object GUID
+OgreXMLConverter_GUID_CMAKE:INTERNAL=36395F90EA1242DA85E580F4
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: POCO_INCLUDE_DIR
+POCO_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: POCO_LIBRARY_DBG
+POCO_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: POCO_LIBRARY_REL
+POCO_LIBRARY_REL-ADVANCED:INTERNAL=1
+POCO_PKGC_CFLAGS:INTERNAL=
+POCO_PKGC_CFLAGS_I:INTERNAL=
+POCO_PKGC_CFLAGS_OTHER:INTERNAL=
+POCO_PKGC_FOUND:INTERNAL=
+POCO_PKGC_INCLUDEDIR:INTERNAL=
+POCO_PKGC_LIBDIR:INTERNAL=
+POCO_PKGC_LIBS:INTERNAL=
+POCO_PKGC_LIBS_L:INTERNAL=
+POCO_PKGC_LIBS_OTHER:INTERNAL=
+POCO_PKGC_LIBS_PATHS:INTERNAL=
+POCO_PKGC_POCO_INCLUDEDIR:INTERNAL=
+POCO_PKGC_POCO_LIBDIR:INTERNAL=
+POCO_PKGC_POCO_PREFIX:INTERNAL=
+POCO_PKGC_POCO_VERSION:INTERNAL=
+POCO_PKGC_PREFIX:INTERNAL=
+POCO_PKGC_STATIC_CFLAGS:INTERNAL=
+POCO_PKGC_STATIC_CFLAGS_I:INTERNAL=
+POCO_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+POCO_PKGC_STATIC_LIBDIR:INTERNAL=
+POCO_PKGC_STATIC_LIBS:INTERNAL=
+POCO_PKGC_STATIC_LIBS_L:INTERNAL=
+POCO_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+POCO_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+POCO_PKGC_VERSION:INTERNAL=
+//x
+POCO_PREFIX_PATH_INT_CHECK:INTERNAL=
+//Stored Xcode object GUID
+PROJECT_OGRE_GUID_CMAKE:INTERNAL=F4E15255A54F41168E969B0C
+//Stored Xcode object GUID
+PROJECT_OgreMain_GUID_CMAKE:INTERNAL=6FB7524369574262A945CC13
+//Stored Xcode object GUID
+PROJECT_OgrePaging_GUID_CMAKE:INTERNAL=3941B23B15B045EDAF6D82ED
+//Stored Xcode object GUID
+PROJECT_OgreProperty_GUID_CMAKE:INTERNAL=9FE9B26D895A41D7A17EA9A1
+//Stored Xcode object GUID
+PROJECT_OgreRTShaderSystem_GUID_CMAKE:INTERNAL=D5029F925F874EC7BB2F4949
+//Stored Xcode object GUID
+PROJECT_OgreTerrain_GUID_CMAKE:INTERNAL=CB1395776105412685FA0D37
+//Stored Xcode object GUID
+Plugin_BSPSceneManager_GUID_CMAKE:INTERNAL=581F66017CEB480F809748F1
+//Stored Xcode object GUID
+Plugin_CgProgramManager_GUID_CMAKE:INTERNAL=BBB63DB83C5347259166DCDF
+//Stored Xcode object GUID
+Plugin_OctreeSceneManager_GUID_CMAKE:INTERNAL=E3CD53A2E2964DAF97710B13
+//Stored Xcode object GUID
+Plugin_OctreeZone_GUID_CMAKE:INTERNAL=C0A89F90D8F843C8990C8F84
+//Stored Xcode object GUID
+Plugin_PCZSceneManager_GUID_CMAKE:INTERNAL=8B9B293777F04E9BBA8D925A
+//Stored Xcode object GUID
+Plugin_ParticleFX_GUID_CMAKE:INTERNAL=FB998F1CE0CB41E7AD99F29C
+//Stored Xcode object GUID
+RenderSystem_GL_GUID_CMAKE:INTERNAL=C5E27031D81F419DB9FEFF24
+//ADVANCED property for variable: Softimage_INCLUDE_DIR
+Softimage_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Softimage_LIBRARY
+Softimage_LIBRARY-ADVANCED:INTERNAL=1
+//x
+Softimage_PREFIX_PATH_INT_CHECK:INTERNAL=C:/Softimage/XSI_6.0/XSISDK;C:/Softimage/XSI_6.01/XSISDK;C:/Softimage/XSI_6.02/XSISDK;C:/Softimage/XSI_6.5/XSISDK;C:/Softimage/XSI_7.0/XSISDK;C:/Softimage/XSI_7.01/XSISDK;C:/Softimage/XSI_7.5/XSISDK;C:/Softimage/Softimage_2010/XSISDK;C:/Softimage/Softimage_2010_SP1/XSISDK;/Autodesk/Softimage 2011/XSISDK;/Autodesk/Softimage 2011 SP1/XSISDK;/Autodesk/Softimage 2012/XSISDK;/Autodesk/Softimage 2012 SP1/XSISDK;/Autodesk/Softimage 2013/XSISDK;C:/Softimage/XSI_6.0_x64/XSISDK;C:/Softimage/XSI_6.01_x64/XSISDK;C:/Softimage/XSI_6.02_x64/XSISDK;C:/Softimage/XSI_6.5_x64/XSISDK;C:/Softimage/XSI_7.0_x64/XSISDK;C:/Softimage/XSI_7.01_x64/XSISDK;C:/Softimage/XSI_7.5_x64/XSISDK;C:/Softimage/Softimage_2010_x64/XSISDK;C:/Softimage/Softimage_2010_SP1_x64/XSISDK;/Autodesk/Softimage 2011/XSISDK;/Autodesk/Softimage 2011 SP1/XSISDK;/Autodesk/Softimage 2012/XSISDK;/Autodesk/Softimage 2012 SP1/XSISDK;/Autodesk/Softimage 2013/XSISDK
+//ADVANCED property for variable: Softimage_SICPPSDK_LIBRARY
+Softimage_SICPPSDK_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_INCLUDE_DIR
+TBB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_LIBRARY_DBG
+TBB_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TBB_LIBRARY_REL
+TBB_LIBRARY_REL-ADVANCED:INTERNAL=1
+//x
+TBB_PREFIX_PATH_INT_CHECK:INTERNAL=
+//Stored Xcode object GUID
+ZERO_CHECK_GUID_CMAKE:INTERNAL=3CCF7D8D0A8E4FF5A602055D
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DBG
+ZLIB_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_REL
+ZLIB_LIBRARY_REL-ADVANCED:INTERNAL=1
+ZLIB_PKGC_CFLAGS:INTERNAL=
+ZLIB_PKGC_CFLAGS_I:INTERNAL=
+ZLIB_PKGC_CFLAGS_OTHER:INTERNAL=
+ZLIB_PKGC_FOUND:INTERNAL=1
+ZLIB_PKGC_INCLUDEDIR:INTERNAL=
+ZLIB_PKGC_INCLUDE_DIRS:INTERNAL=
+ZLIB_PKGC_LDFLAGS:INTERNAL=-lz
+ZLIB_PKGC_LDFLAGS_OTHER:INTERNAL=
+ZLIB_PKGC_LIBDIR:INTERNAL=
+ZLIB_PKGC_LIBRARIES:INTERNAL=z
+ZLIB_PKGC_LIBRARY_DIRS:INTERNAL=
+ZLIB_PKGC_LIBS:INTERNAL=
+ZLIB_PKGC_LIBS_L:INTERNAL=
+ZLIB_PKGC_LIBS_OTHER:INTERNAL=
+ZLIB_PKGC_LIBS_PATHS:INTERNAL=
+ZLIB_PKGC_PREFIX:INTERNAL=
+ZLIB_PKGC_STATIC_CFLAGS:INTERNAL=
+ZLIB_PKGC_STATIC_CFLAGS_I:INTERNAL=
+ZLIB_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+ZLIB_PKGC_STATIC_INCLUDE_DIRS:INTERNAL=
+ZLIB_PKGC_STATIC_LDFLAGS:INTERNAL=-lz
+ZLIB_PKGC_STATIC_LDFLAGS_OTHER:INTERNAL=
+ZLIB_PKGC_STATIC_LIBDIR:INTERNAL=
+ZLIB_PKGC_STATIC_LIBRARIES:INTERNAL=z
+ZLIB_PKGC_STATIC_LIBRARY_DIRS:INTERNAL=
+ZLIB_PKGC_STATIC_LIBS:INTERNAL=
+ZLIB_PKGC_STATIC_LIBS_L:INTERNAL=
+ZLIB_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+ZLIB_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+ZLIB_PKGC_VERSION:INTERNAL=1.2.5
+ZLIB_PKGC_zzip-zlib-config_INCLUDEDIR:INTERNAL=
+ZLIB_PKGC_zzip-zlib-config_LIBDIR:INTERNAL=
+ZLIB_PKGC_zzip-zlib-config_PREFIX:INTERNAL=
+ZLIB_PKGC_zzip-zlib-config_VERSION:INTERNAL=
+//x
+ZLIB_PREFIX_PATH_INT_CHECK:INTERNAL=
+//ADVANCED property for variable: ZZip_INCLUDE_DIR
+ZZip_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZZip_LIBRARY_DBG
+ZZip_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZZip_LIBRARY_REL
+ZZip_LIBRARY_REL-ADVANCED:INTERNAL=1
+ZZip_PKGC_CFLAGS:INTERNAL=-I/usr/local/Cellar/libzzip/0.13.62/include
+ZZip_PKGC_CFLAGS_I:INTERNAL=
+ZZip_PKGC_CFLAGS_OTHER:INTERNAL=
+ZZip_PKGC_FOUND:INTERNAL=1
+ZZip_PKGC_INCLUDEDIR:INTERNAL=/usr/local/Cellar/libzzip/0.13.62/include
+ZZip_PKGC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/libzzip/0.13.62/include
+ZZip_PKGC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/libzzip/0.13.62/lib;-lzzip;-lz
+ZZip_PKGC_LDFLAGS_OTHER:INTERNAL=
+ZZip_PKGC_LIBDIR:INTERNAL=/usr/local/Cellar/libzzip/0.13.62/lib
+ZZip_PKGC_LIBRARIES:INTERNAL=zzip;z
+ZZip_PKGC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/libzzip/0.13.62/lib
+ZZip_PKGC_LIBS:INTERNAL=
+ZZip_PKGC_LIBS_L:INTERNAL=
+ZZip_PKGC_LIBS_OTHER:INTERNAL=
+ZZip_PKGC_LIBS_PATHS:INTERNAL=
+ZZip_PKGC_PREFIX:INTERNAL=/usr/local/Cellar/libzzip/0.13.62
+ZZip_PKGC_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/libzzip/0.13.62/include
+ZZip_PKGC_STATIC_CFLAGS_I:INTERNAL=
+ZZip_PKGC_STATIC_CFLAGS_OTHER:INTERNAL=
+ZZip_PKGC_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/libzzip/0.13.62/include
+ZZip_PKGC_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/libzzip/0.13.62/lib;-lzzip;-lz
+ZZip_PKGC_STATIC_LDFLAGS_OTHER:INTERNAL=
+ZZip_PKGC_STATIC_LIBDIR:INTERNAL=
+ZZip_PKGC_STATIC_LIBRARIES:INTERNAL=zzip;z
+ZZip_PKGC_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/libzzip/0.13.62/lib
+ZZip_PKGC_STATIC_LIBS:INTERNAL=
+ZZip_PKGC_STATIC_LIBS_L:INTERNAL=
+ZZip_PKGC_STATIC_LIBS_OTHER:INTERNAL=
+ZZip_PKGC_STATIC_LIBS_PATHS:INTERNAL=
+ZZip_PKGC_VERSION:INTERNAL=0.13.62
+ZZip_PKGC_zziplib_INCLUDEDIR:INTERNAL=
+ZZip_PKGC_zziplib_LIBDIR:INTERNAL=
+ZZip_PKGC_zziplib_PREFIX:INTERNAL=
+ZZip_PKGC_zziplib_VERSION:INTERNAL=
+//x
+ZZip_PREFIX_PATH_INT_CHECK:INTERNAL=
+//Last used BOOST_LIBRARYDIR value.
+_BOOST_LIBRARYDIR_LAST:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/lib/[osx_10.9]/Boost
+//Last used BOOST_ROOT value.
+_BOOST_ROOT_LAST:INTERNAL=/Users/asa/Developer/rigs_of_rods/ror_dependencies_v26/src/Boost/boost
+//Last used Boost_ADDITIONAL_VERSIONS value.
+_Boost_ADDITIONAL_VERSIONS_LAST:INTERNAL=1.51;1.51.0;1.50;1.50.0;1.49;1.49.0;1.48;1.48.0;1.47;1.47.0;1.46;1.46.0;1.45;1.45.0;1.44;1.44.0;1.42;1.42.0;1.41.0;1.41;1.40.0;1.40
+//Components requested for this build tree.
+_Boost_COMPONENTS_SEARCHED:INTERNAL=chrono;date_time;system;thread
+//Last used Boost_INCLUDE_DIR value.
+_Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/local/include
+//Last used Boost_LIBRARY_DIR value.
+_Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/local/lib
+//Last used Boost_USE_MULTITHREADED value.
+_Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
+//Last used Boost_USE_STATIC_LIBS value.
+_Boost_USE_STATIC_LIBS_LAST:INTERNAL=TRUE
+__pkg_config_checked_Carbon_PKGC:INTERNAL=1
+__pkg_config_checked_Cg_PKGC:INTERNAL=1
+__pkg_config_checked_Cocoa_PKGC:INTERNAL=1
+__pkg_config_checked_CoreVideo_PKGC:INTERNAL=1
+__pkg_config_checked_CppUnit_PKGC:INTERNAL=1
+__pkg_config_checked_FREETYPE_PKGC:INTERNAL=1
+__pkg_config_checked_FreeImage_PKGC:INTERNAL=1
+__pkg_config_checked_GLSL_Optimizer_PKGC:INTERNAL=1
+__pkg_config_checked_HLSL2GLSL_PKGC:INTERNAL=1
+__pkg_config_checked_IOKit_PKGC:INTERNAL=1
+__pkg_config_checked_OIS_PKGC:INTERNAL=1
+__pkg_config_checked_POCO_PKGC:INTERNAL=1
+__pkg_config_checked_ZLIB_PKGC:INTERNAL=1
+__pkg_config_checked_ZZip_PKGC:INTERNAL=1
+//Stored Xcode object GUID
+doc_GUID_CMAKE:INTERNAL=0A76A82F27854095AE5DD134
+//x
+iOSSDK_PREFIX_PATH_INT_CHECK:INTERNAL=
+//Stored Xcode object GUID
+install_GUID_CMAKE:INTERNAL=CD5E0F438949458AA0A3428A
+//Stored Xcode object GUID
+package_GUID_CMAKE:INTERNAL=8308934ED9714F3A8D966218
+

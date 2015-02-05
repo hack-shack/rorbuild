@@ -1,0 +1,29 @@
+# rorbuild .gitignore file
+# This specifies which dirs/files not to track in Git.
+
+# Product: include directory
+include
+include/**
+
+# Product: lib directory
+lib
+lib/**
+
+# Product: build directories
+build/**
+
+# Source files
+files/**
+files-win
+files_win/**
+!files/wget_all.command
+
+# Product: compiled Python files
+pyBuilder/*.pyc
+
+# PyCharm
+.idea
+.idea/**
+
+# Unsure
+Ogre-build-CmakeGUI/**
