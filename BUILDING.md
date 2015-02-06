@@ -1,9 +1,8 @@
 Building Rigs of Rods on OS X "Mavericks"
 =========================================
-Author					:	hack-shack
+Author				:	hack-shack
 RoR target version		:	0.4.0.7
 OS X target version		:	10.9.2
-
 
 Overview
 ========
@@ -17,9 +16,9 @@ Rigs of Rods is built in 4 steps:
   * Using CMake, create a Makefile for RoR
   * Use make to build the RoR app (xcodebuild on Mac)
   
-
 Required tools
 ==============
+(YAML table below. If you don't see two columns, switch your Markdown reader to raw text mode.)
 Xcode				:
 	version			:	5.1 (5B130a)
 	notes			:	Requires Xcode Command Line Tools to be installed.
