@@ -21,6 +21,9 @@ files_win/**
 # Product: compiled Python files
 pyBuilder/*.pyc
 
+# Mac OS X
+.DS_Store
+
 # PyCharm
 .idea
 .idea/**
