@@ -319,16 +319,18 @@ SWIG				:
 	description		:	interfaces to C++ code; use with python for motion platforms
 	homepage		:	http://www.swig.org/Doc1.3/Introduction.html
 
-Arbaro				:
+Arbaro			:
 	description		:	tree generation for povray
 	homepage		:	arbaro.sourceforge.net
-	notes			:	java library
+	notes			:	java library.
+	
+The same tree algorithm is used in a Python script, Sapling Tree: http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Curve/Sapling_Tree
 
 Libraries for the following things
   * Flora	:	quadruped skeleton generator and animal behavior AI,
   			:	coupled to SkyX (wind sim)
   * Fauna	:	fast, pretty hardware plant generation and rendering
-  * Mecha	:	AI framework for simulated "optimal" traffic, using collision-avoidance
+  * Mecha	:	AI framework for simulated traffic, using collision-avoidance
   				strategy: http://www.traffic-simulation.de/
   * Fractal terrain : http://complexity.massey.ac.nz/posters/pdf/A0-Fractal-Terrain-Poster.pdf
   * MyGUI replacement: libRocket, HTML/CSS game interface middleware (C++)
