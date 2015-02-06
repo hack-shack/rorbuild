@@ -58,7 +58,7 @@ First, build the simpler libraries
 WxWidgets			:
 	version			:	3.0.0
 	notes			:	WxWidgets 3.0 required to build for OS X 10.9;
-					:	Apple removed Carbon, which WxWidgets 2.9 used.
+					:	Carbon is deprecated, which WxWidgets 2.9 used.
 					:	(As of Mar 2014, RoR for Windows 0.4.0.7 uses WxWidgets 2.9.1.)
 	sourcefile		:
 		https://sourceforge.net/projects/wxwindows/files/3.0.0/wxWidgets-3.0.0.tar.bz2
