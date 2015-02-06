@@ -1,9 +1,8 @@
 Building Rigs of Rods on OS X "Mavericks"
 =========================================
-Author					:	hack-shack
+Author				:	hack-shack
 RoR target version		:	0.4.0.7
 OS X target version		:	10.9.2
-
 
 Overview
 ========
@@ -17,9 +16,9 @@ Rigs of Rods is built in 4 steps:
   * Using CMake, create a Makefile for RoR
   * Use make to build the RoR app (xcodebuild on Mac)
   
-
 Required tools
 ==============
+(YAML table below. If you don't see two columns, switch your Markdown reader to raw text mode.)
 Xcode				:
 	version			:	5.1 (5B130a)
 	notes			:	Requires Xcode Command Line Tools to be installed.
@@ -59,7 +58,7 @@ First, build the simpler libraries
 WxWidgets			:
 	version			:	3.0.0
 	notes			:	WxWidgets 3.0 required to build for OS X 10.9;
-					:	Apple removed Carbon, which WxWidgets 2.9 used.
+					:	Carbon is deprecated, which WxWidgets 2.9 used.
 					:	(As of Mar 2014, RoR for Windows 0.4.0.7 uses WxWidgets 2.9.1.)
 	sourcefile		:
 		https://sourceforge.net/projects/wxwindows/files/3.0.0/wxWidgets-3.0.0.tar.bz2
@@ -320,16 +319,18 @@ SWIG				:
 	description		:	interfaces to C++ code; use with python for motion platforms
 	homepage		:	http://www.swig.org/Doc1.3/Introduction.html
 
-Arbaro				:
+Arbaro			:
 	description		:	tree generation for povray
 	homepage		:	arbaro.sourceforge.net
-	notes			:	java library
+	notes			:	java library.
+	
+The same tree algorithm is used in a Python script, Sapling Tree: http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Curve/Sapling_Tree
 
 Libraries for the following things
   * Flora	:	quadruped skeleton generator and animal behavior AI,
   			:	coupled to SkyX (wind sim)
   * Fauna	:	fast, pretty hardware plant generation and rendering
-  * Mecha	:	AI framework for simulated "optimal" traffic, using collision-avoidance
+  * Mecha	:	AI framework for simulated traffic, using collision-avoidance
   				strategy: http://www.traffic-simulation.de/
   * Fractal terrain : http://complexity.massey.ac.nz/posters/pdf/A0-Fractal-Terrain-Poster.pdf
   * MyGUI replacement: libRocket, HTML/CSS game interface middleware (C++)
