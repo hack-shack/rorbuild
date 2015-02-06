@@ -594,7 +594,7 @@ This runs whenever we push the latest build to the machine.
 Jenkins
 =======
 
-Create Standard user named "rorbuild." Keep the password in a Keychain note.
+Create Standard user named "rorbuild."
 
 Grant permissions:
   * Locate rorbuild directory somewhere logical, where you and Jenkins can access it.
