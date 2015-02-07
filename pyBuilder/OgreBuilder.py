@@ -126,8 +126,9 @@ call:checkReturnValue
 cmake .. -G %(generator)s ^
  -DBOOST_LIBRARYDIR="%(depsdir_cmake)s/libs/%(arch)s/boost" ^
  -DBoost_INCLUDE_DIR="%(depsdir_cmake)s/includes/%(arch)s/boost" ^
- -DOgre_BUILD_RENDERSYSTEM_D3D10=ON ^
- -DOgre_BUILD_RENDERSYSTEM_D3D11=ON ^
+ -DOgre_BUILD_RENDERSYSTEM_D3D10=OFF ^
+ -DOgre_BUILD_RENDERSYSTEM_D3D11=OFF ^
+ -DOGRE_BUILD_RENDERSYSTEM_GL=ON
  -DOgre_BUILD_SAMPLES=OFF ^
  -DOgre_CONFIG_ALLOCATOR=4 ^
  -DOgre_CONFIG_CONTAINERS_USE_CUSTOM_ALLOCATOR=ON ^
