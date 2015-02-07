@@ -324,12 +324,16 @@ Arbaro			:
 	homepage		:	arbaro.sourceforge.net
 	notes			:	java library.
 	
+SmartBody: character animation library
+  * http://smartbody.ict.usc.edu
+	
 The same tree algorithm is used in a Python script, Sapling Tree: http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Curve/Sapling_Tree
 
 Libraries for the following things
-  * Flora	:	quadruped skeleton generator and animal behavior AI,
-  			:	coupled to SkyX (wind sim)
-  * Fauna	:	fast, pretty hardware plant generation and rendering
+  * Fauna	:	quadruped skeleton generator and animal behavior AI,
+  			coupled to SkyX (wind sim)
+  * Flora	:	fast, pretty hardware plant generation and rendering
+   
   * Mecha	:	AI framework for simulated traffic, using collision-avoidance
   				strategy: http://www.traffic-simulation.de/
   * Fractal terrain : http://complexity.massey.ac.nz/posters/pdf/A0-Fractal-Terrain-Poster.pdf
@@ -594,7 +598,7 @@ This runs whenever we push the latest build to the machine.
 Jenkins
 =======
 
-Create Standard user named "rorbuild." Keep the password in a Keychain note.
+Create Standard user named "rorbuild."
 
 Grant permissions:
   * Locate rorbuild directory somewhere logical, where you and Jenkins can access it.
